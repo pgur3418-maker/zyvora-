@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZYVORA | Premium Fashion Store</title>
+
+<meta name="description" content="ZYVORA - Premium clothing, shoes and accessories. Discover modern fashion online.">
+<meta name="keywords" content="ZYVORA, fashion store, clothing, shoes, accessories">
+<meta name="robots" content="index, follow">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:#f7f7f7;
+  color:#111;
+}
+
+button,input,textarea,select{font-family:inherit}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:5px;
+}
+
+nav{
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#111;
+  font-weight:600;
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+}
+
+.actions button{
+  border:0;
+  background:#111;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:22px;
+  cursor:pointer;
+}
+
+.hero{
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:30px;
+  background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    linear-gradient(135deg,#111,#777);
+}
+
+.hero-content{max-width:800px}
+
+.hero small{
+  letter-spacing:5px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:70px;
+  letter-spacing:12px;
+  margin:18px 0;
+}
+
+.hero p{
+  font-size:19px;
+  line-height:1.7;
+  color:#eee;
+}
+
+.hero-btn{
+  display:inline-block;
+  margin-top:28px;
+  padding:15px 34px;
+  border-radius:30px;
+  background:#fff;
+  color:#111;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.search-area{
+  max-width:1200px;
+  margin:auto;
+  padding:35px 5% 10px;
+}
+
+.search{
+  width:100%;
+  padding:16px 22px;
+  border:1px solid #ddd;
+  border-radius:30px;
+  font-size:16px;
+  outline:none;
+}
+
+.categories{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:20px 5%;
+}
+
+.category{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:11px 20px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.category.active{
+  background:#111;
+  color:#fff;
+}
+
+section{padding:55px 5%}
+
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.section-title h2{font-size:40px}
+
+.section-title p{
+  color:#777;
+  margin-top:8px;
+}
+
+.products{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
+
+.product{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 8px 28px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,.14);
+}
+
+.product-img{
+  height:300px;
+  background:#eee;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.product-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.4s;
+}
+
+.product:hover .product-img img{
+  transform:scale(1.06);
+}
+
+.wishlist-btn{
+  position:absolute;
+  right:14px;
+  top:14px;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  font-size:23px;
+  cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
+  z-index:2;
+}
+
+.info{padding:18px}
+
+.info h3{
+  font-size:19px;
+  margin-bottom:6px;
+}
+
+.info p{
+  color:#777;
+  font-size:14px;
+}
+
+.price{
+  font-size:21px;
+  font-weight:800;
+  margin:12px 0;
+}
+
+.old-price{
+  font-size:14px;
+  color:#999;
+  text-decoration:line-through;
+  margin-right:6px;
+}
+
+.discount{
+  display:inline-block;
+  font-size:12px;
+  font-weight:bold;
+  background:#111;
+  color:#fff;
+  padding:4px 7px;
+  border-radius:5px;
+}
+
+.stock{
+  font-size:13px;
+  font-weight:bold;
+  margin:8px 0;
+}
+
+.in-stock{color:#168a32}
+.low-stock{color:#d27a00}
+.out-stock{color:#c00}
+
+.info select,
+.detail-info select{
+  width:100%;
+  padding:11px;
+  border:1px solid #ddd;
+  border-radius:9px;
+  margin-bottom:10px;
+  background:#fff;
+}
+
+.add,.buy{
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:10px;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:6px;
+}
+
+.add{background:#111}
+.buy{background:#555}
+
+.add:disabled,.buy:disabled{
+  background:#aaa;
+  cursor:not-allowed;
+}
+
+.about{
+  background:#111;
+  color:#fff;
+  text-align:center;
+}
+
+.about p{
+  max-width:750px;
+  margin:auto;
+  color:#ccc;
+  line-height:1.8;
+}
+
+footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:35px 20px;
+}
+
+footer p{
+  color:#aaa;
+  margin-top:8px;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  z-index:3000;
+  padding:20px;
+  overflow:auto;
+}
+
+.modal.show{display:block}
+
+.modal-box{
+  background:#fff;
+  max-width:680px;
+  margin:40px auto;
+  padding:25px;
+  border-radius:20px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:12px;
+  border:0;
+  background:#111;
+  color:#fff;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.cart-item{
+  padding:15px 0;
+  border-bottom:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+}
+
+.qty button{
+  width:30px;
+  height:30px;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:7px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.remove{
+  background:#e53935;
+  color:#fff;
+  border:0;
+  padding:8px 11px;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+.total{
+  font-size:24px;
+  font-weight:bold;
+  margin:20px 0;
+}
+
+.checkout{
+  width:100%;
+  padding:15px;
+  background:#111;
+  color:#fff;
+  border:0;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.detail-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.detail-image{
+  width:100%;
+  height:430px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.detail-info{padding:10px}
+
+.detail-info h2{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.detail-price{
+  font-size:28px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.detail-description{
+  color:#666;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.checkout-form h3{
+  margin:18px 0 10px;
+}
+
+.checkout-form input,
+.checkout-form textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:9px;
+  margin-bottom:10px;
+  outline:none;
+}
+
+.payment-box{
+  margin-top:15px;
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:12px;
+}
+
+.payment-box label{
+  display:block;
+  margin:10px 0;
+  cursor:pointer;
+}
+
+.upi-btn,.whatsapp-btn{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:10px;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.upi-btn{background:#111}
+.whatsapp-btn{background:#222}
+
+.confirm{
+  text-align:center;
+  padding:25px;
+}
+
+.confirm-icon{
+  font-size:55px;
+  margin-bottom:15px;
+}
+
+.order-id{
+  background:#f2f2f2;
+  padding:14px;
+  border-radius:10px;
+  margin:15px 0;
+  font-weight:bold;
+}
+
+@media(max-width:700px){
+
+  nav{display:none}
+
+  .logo{
+    font-size:22px;
+  }
+
+  .hero{
+    min-height:550px;
+  }
+
+  .hero h1{
+    font-size:43px;
+    letter-spacing:6px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  section{
+    padding:40px 18px;
+  }
+
+  .section-title h2{
+    font-size:32px;
+  }
+
+  .detail-layout{
+    grid-template-columns:1fr;
+  }
+
+  .detail-image{
+    height:350px;
+  }
+
+  header{
+    padding:12px 4%;
+  }
+
+  .actions button{
+    padding:8px 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">ZYVORA</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
+</nav>
+
+<div class="actions">
+
+<button onclick="openWishlist()">
+❤️ <span id="wishCount">0</span>
+</button>
+
+<button onclick="openCart()">
+🛒 <span id="cartCount">0</span>
+</button>
+
+</div>
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<small>NEW COLLECTION</small>
+
+<h1>ZYVORA</h1>
+
+<p>
+Modern fashion designed for your everyday style.
+Discover clothing, shoes and accessories for a confident look.
+</p>
+
+<a href="#shop" class="hero-btn">
+SHOP NOW
+</a>
+
+</div>
+</section>
+
+<div class="search-area">
+
+<input
+id="search"
+class="search"
+type="text"
+placeholder="Search products..."
+oninput="displayProducts()">
+
+</div>
+
+<div class="categories">
+
+<button class="category active"
+onclick="filterCategory('All',this)">
+All
+</button>
+
+<button class="category"
+onclick="filterCategory('Men',this)">
+Men
+</button>
+
+<button class="category"
+onclick="filterCategory('Women',this)">
+Women
+</button>
+
+<button class="category"
+onclick="filterCategory('Shoes',this)">
+Shoes
+</button>
+
+<button class="category"
+onclick="filterCategory('Accessories',this)">
+Accessories
+</button>
+
+</div>
+
+<section id="shop">
+
+<div class="section-title">
+
+<h2>Featured Collection</h2>
+
+<p>Explore our latest fashion collection</p>
+
+</div>
+
+<div class="products" id="products"></div>
+
+</section>
+
+<section class="about" id="about">
+
+<div class="section-title">
+
+<h2>About Zyvora</h2>
+
+<p style="color:#aaa;">
+Style • Simplicity • Confidence
+</p>
+
+</div>
+
+<p>
+Zyvora is a modern fashion-store concept focused on
+clean design, contemporary style and an easy shopping
+experience across mobile and desktop devices.
+</p>
+
+</section>
+
+<footer>
+
+<h2>ZYVORA</h2>
+
+<p>Modern Fashion Store</p>
+
+<p>WhatsApp: +91 6283618166</p>
+
+<p>© 2026 Zyvora. All Rights Reserved.</p>
+
+</footer>
+
+<!-- CART -->
+
+<div class="modal" id="cartModal">
+
+<div class="modal-box">
+
+<button class="close"
+onclick="closeModal('cartModal')">×</button>
+
+<h2>🛒 Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<div class="total">
+Total: ₹<span id="cartTotal">0</span>
+</div>
+
+<button class="checkout"
+onclick="openCheckout()">
+PROCEED TO CHECKOUT
+</button>
+
+</div>
+</div>
+
+<!-- WISHLIST -->
+
+<div class="modal" id="wishlistModal">
+
+<div class="modal-box">
+
+<button class="close"
+onclick="closeModal('wishlistModal')">×</button>
+
+<h2>❤️ Wishlist</h2>
+
+<div id="wishlistItems"></div>
+
+</div>
+</div>
+
+<!-- DETAILS -->
+
+<div class="modal" id="detailsModal">
+
+<div class="modal-box">
+
+<button class="close"
+onclick="closeModal('detailsModal')">×</button>
+
+<div id="detailsContent"></div>
+
+</div>
+</div>
+
+<!-- CHECKOUT -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modal-box">
+
+<button class="close"
+onclick="closeModal('checkoutModal')">×</button>
+
+<h2>🧾 Checkout</h2>
+
+<div class="checkout-form">
+
+<h3>Customer Details</h3>
+
+<input id="customerName"
+type="text"
+placeholder="Full Name">
+
+<input id="customerPhone"
+type="tel"
+placeholder="Mobile Number">
+
+<textarea id="customerAddress"
+rows="4"
+placeholder="Full Address"></textarea>
+
+<h3>Payment Method</h3>
+
+<div class="payment-box">
+
+<label>
+<input
+type="radio"
+name="payment"
+value="UPI"
+checked>
+UPI Payment
+</label>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="COD">
+Cash on Delivery
+</label>
+
+</div>
+
+<div class="total">
+Order Total: ₹<span id="checkoutTotal">0</span>
+</div>
+
+<button class="upi-btn"
+onclick="payWithUPI()">
+💳 PAY WITH UPI
+</button>
+
+<button class="whatsapp-btn"
+onclick="sendWhatsAppOrder()">
+📱 ORDER ON WHATSAPP
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- CONFIRMATION -->
+
+<div class="modal" id="confirmationModal">
+
+<div class="modal-box">
+
+<button class="close"
+onclick="closeModal('confirmationModal')">×</button>
+
+<div class="confirm">
+
+<div class="confirm-icon">✅</div>
+
+<h2>Order Created!</h2>
+
+<p style="margin-top:10px;">
+Thank you for shopping with Zyvora.
+</p>
+
+<div class="order-id">
+Order ID:
+<span id="orderId"></span>
+</div>
+
+<p>
+Your order details are ready to send on WhatsApp.
+</p>
+
+<button class="whatsapp-btn"
+onclick="sendLastOrderWhatsApp()">
+📱 SEND ORDER ON WHATSAPP
+</button>
+
+</div>
+</div>
+</div>
+
+<script>
+
+/* =========================
+STORE SETTINGS
+========================= */
+
+const WHATSAPP_NUMBER="916283618166";
+const UPI_ID="6283618166@fam";
+const STORE_NAME="Zyvora";
+
+/* =========================
+DEFAULT PRODUCTS
+IMPORTANT:
+JACKET PRICE = ₹4999
+========================= */
+
+const defaultProducts=[
+
+{
+id:1,
+name:"Premium Black Jacket",
+price:4999,
+category:"Men",
+image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80",
+discount:0,
+stock:20,
+color:"Black",
+sizes:"M,L,XL,XXL",
+description:"Premium modern black jacket designed for a clean and confident everyday look."
+},
+
+{
+id:2,
+name:"Classic White T-Shirt",
+price:999,
+category:"Men",
+image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+discount:0,
+stock:20,
+color:"White",
+sizes:"M,L,XL,XXL",
+description:"Clean classic white T-shirt with a comfortable everyday fashion style."
+},
+
+{
+id:3,
+name:"Modern Women's Outfit",
+price:2499,
+category:"Women",
+image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+discount:0,
+stock:20,
+color:"Black",
+sizes:"M,L,XL",
+description:"Modern fashion outfit created for a stylish contemporary look."
+},
+
+{
+id:4,
+name:"Street Sneakers",
+price:2999,
+category:"Shoes",
+image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+discount:0,
+stock:20,
+color:"Red",
+sizes:"M,L,XL",
+description:"Modern street-style sneakers suitable for everyday outfits."
+},
+
+{
+id:5,
+name:"Premium Fashion Cap",
+price:699,
+category:"Accessories",
+image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=80",
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Simple premium cap to complete your everyday fashion look."
+},
+
+{
+id:6,
+name:"Classic Fashion Jeans",
+price:2499,
+category:"Women",
+image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80",
+discount:0,
+stock:20,
+color:"Blue",
+sizes:"S,M,L,XL",
+description:"Classic fashion jeans designed for a modern casual wardrobe."
+}
+
+];
+
+/* =========================
+LOAD PRODUCTS
+This keeps ALL products.
+========================= */
+
+function loadProducts(){
+
+let saved=localStorage.getItem("zyvoraProducts");
+
+if(!saved){
+
+localStorage.setItem(
+"zyvoraProducts",
+JSON.stringify(defaultProducts)
+);
+
+return JSON.parse(
+JSON.stringify(defaultProducts)
+);
+
+}
+
+try{
+
+let savedProducts=JSON.parse(saved);
+
+if(!Array.isArray(savedProducts) ||
+savedProducts.length===0){
+
+localStorage.setItem(
+"zyvoraProducts",
+JSON.stringify(defaultProducts)
+);
+
+return JSON.parse(
+JSON.stringify(defaultProducts)
+);
+
+}
+
+/*
+Restore any missing default products.
+This prevents products disappearing.
+*/
+
+defaultProducts.forEach(defaultProduct=>{
+
+const exists=savedProducts.find(
+p=>Number(p.id)===Number(defaultProduct.id)
+);
+
+if(!exists){
+
+savedProducts.push(
+JSON.parse(JSON.stringify(defaultProduct))
+);
+
+}
+
+});
+
+/*
+If jacket was never manually changed,
+keep it at ₹4999.
+*/
+
+const jacket=savedProducts.find(
+p=>Number(p.id)===1
+);
+
+if(jacket &&
+(!jacket.price ||
+Number(jacket.price)===3999)){
+
+jacket.price=4999;
+
+}
+
+localStorage.setItem(
+"zyvoraProducts",
+JSON.stringify(savedProducts)
+);
+
+return savedProducts;
+
+}catch(error){
+
+localStorage.setItem(
+"zyvoraProducts",
+JSON.stringify(defaultProducts)
+);
+
+return JSON.parse(
+JSON.stringify(defaultProducts)
+);
+
+}
+
+}
+
+let products=loadProducts();
+
+/* =========================
+OTHER DATA
+========================= */
+
+let cart=JSON.parse(
+localStorage.getItem("zyvoraCart")||"[]"
+);
+
+let wishlist=JSON.parse(
+localStorage.getItem("zyvoraWishlist")||"[]"
+);
+
+let currentCategory="All";
+let selectedProduct=null;
+let lastOrder=null;
+
+/* =========================
+ESCAPE
+========================= */
+
+function escapeHTML(value){
+
+return String(value??"")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+/* =========================
+REFRESH
+========================= */
+
+function refreshProducts(){
+products=loadProducts();
+}
+
+/* =========================
+FINAL PRICE
+========================= */
+
+function getFinalPrice(product){
+
+const price=Number(product.price||0);
+const discount=Number(product.discount||0);
+
+return Math.round(
+price*(1-discount/100)
+);
+
+}
+
+/* =========================
+DISPLAY PRODUCTS
+========================= */
+
+function displayProducts(){
+
+refreshProducts();
+
+const container=document.getElementById("products");
+
+const search=document.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+container.innerHTML="";
+
+const filtered=products.filter(product=>{
+
+const categoryMatch=
+currentCategory==="All" ||
+product.category===currentCategory;
+
+const searchMatch=
+(product.name||"")
+.toLowerCase()
+.includes(search);
+
+return categoryMatch && searchMatch;
+
+});
+
+if(filtered.length===0){
+
+container.innerHTML=`
+<p style="
+grid-column:1/-1;
+text-align:center;
+padding:40px;
+color:#777;">
+No products found.
+</p>`;
+
+updateCounts();
+return;
+
+}
+
+filtered.forEach(product=>{
+
+const index=products.findIndex(
+p=>Number(p.id)===Number(product.id)
+);
+
+const liked=
+wishlist.includes(product.id) ||
+wishlist.includes(String(product.id)) ||
+wishlist.includes(product.name);
+
+const stock=Number(product.stock??0);
+const discount=Number(product.discount??0);
+const originalPrice=Number(product.price??0);
+const finalPrice=getFinalPrice(product);
+
+let stockText="";
+let stockClass="";
+
+if(stock<=0){
+
+stockText="Out of Stock";
+stockClass="out-stock";
+
+}else if(stock<=3){
+
+stockText="Only "+stock+" left";
+stockClass="low-stock";
+
+}else{
+
+stockText="In Stock";
+stockClass="in-stock";
+
+}
+
+let sizeOptions=
+(product.sizes||"M,L,XL,XXL")
+.split(",")
+.map(s=>s.trim())
+.filter(Boolean);
+
+const sizeHTML=sizeOptions.map(size=>`
+<option value="${escapeHTML(size)}">
+Size ${escapeHTML(size)}
+</option>
+`).join("");
+
+container.innerHTML+=`
+
+<div class="product">
+
+<button
+class="wishlist-btn"
+onclick="toggleWishlist(${index})">
+${liked?"❤️":"♡"}
+</button>
+
+<div
+class="product-img"
+onclick="openDetails(${index})">
+
+<img
+src="${escapeHTML(product.image||"")}"
+alt="${escapeHTML(product.name||"ZYVORA Product")}"
+loading="lazy"
+onerror="this.style.display='none'">
+
+</div>
+
+<div class="info">
+
+<h3>
+${escapeHTML(product.name||"Product")}
+</h3>
+
+<p>
+${escapeHTML(product.category||"")}
+</p>
+
+<div class="stock ${stockClass}">
+${stockText}
+</div>
+
+<div class="price">
+
+${
+discount>0
+?
+`
+<span class="old-price">
+₹${originalPrice.toLocaleString("en-IN")}
+</span>
+
+₹${finalPrice.toLocaleString("en-IN")}
+
+<span class="discount">
+-${discount}%
+</span>
+`
+:
+`
+₹${finalPrice.toLocaleString("en-IN")}
+`
+}
+
+</div>
+
+<select id="size${index}">
+${sizeHTML}
+</select>
+
+<button
+class="add"
+onclick="addToCart(${index})"
+${stock<=0?"disabled":""}>
+${stock<=0?"OUT OF STOCK":"ADD TO CART"}
+</button>
+
+<button
+class="buy"
+onclick="buyNow(${index})"
+${stock<=0?"disabled":""}>
+${stock<=0?"OUT OF STOCK":"BUY NOW"}
+</button>
+
+</div>
+</div>
+`;
+
+});
+
+updateCounts();
+
+}
+
+/* =========================
+CATEGORY
+========================= */
+
+function filterCategory(category,button){
+
+currentCategory=category;
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>
+btn.classList.remove("active")
+);
+
+button.classList.add("active");
+
+displayProducts();
+
+}
+
+/* =========================
+CART
+========================= */
+
+function addToCart(index){
+
+refreshProducts();
+
+const product=products[index];
+
+if(!product)return;
+
+const stock=Number(product.stock||0);
+
+if(stock<=0){
+
+alert("This product is out of stock.");
+return;
+
+}
+
+const sizeElement=
+document.getElementById("size"+index);
+
+const size=sizeElement?
+sizeElement.value:
+"M";
+
+const price=getFinalPrice(product);
+
+const existing=cart.find(item=>
+Number(item.id)===Number(product.id) &&
+item.size===size
+);
+
+if(existing){
+
+if(existing.quantity>=stock){
+
+alert("Maximum available stock reached.");
+return;
+
+}
+
+existing.quantity++;
+
+}else{
+
+cart.push({
+id:product.id,
+name:product.name,
+price:price,
+size:size,
+quantity:1
+});
+
+}
+
+saveCart();
+
+alert(product.name+" added to cart.");
+
+}
+
+/* =========================
+SAVE CART
+========================= */
+
+function saveCart(){
+
+localStorage.setItem(
+"zyvoraCart",
+JSON.stringify(cart)
+);
+
+updateCounts();
+
+}
+
+/* =========================
+TOTAL
+========================= */
+
+function getTotal(){
+
+return cart.reduce(
+(total,item)=>
+total+
+Number(item.price||0)*
+Number(item.quantity||0),
+0
+);
+
+}
+
+/* =========================
+COUNTS
+========================= */
+
+function updateCounts(){
+
+const cartCount=
+document.getElementById("cartCount");
+
+const wishCount=
+document.getElementById("wishCount");
+
+if(cartCount){
+
+cartCount.innerText=
+cart.reduce(
+(total,item)=>
+total+Number(item.quantity||0),
+0
+);
+
+}
+
+if(wishCount){
+
+wishCount.innerText=
+wishlist.length;
+
+}
+
+}
+
+/* =========================
+OPEN CART
+========================= */
+
+function openCart(){
+
+renderCart();
+
+document
+.getElementById("cartModal")
+.classList.add("show");
+
+}
+
+/* =========================
+RENDER CART
+========================= */
+
+function renderCart(){
+
+const box=
+document.getElementById("cartItems");
+
+if(cart.length===0){
+
+box.innerHTML=`
+<p style="
+text-align:center;
+padding:30px;
+color:#777;">
+Your cart is empty.
+</p>`;
+
+}else{
+
+box.innerHTML="";
+
+cart.forEach((item,index)=>{
+
+box.innerHTML+=`
+
+<div class="cart-item">
+
+<div>
+
+<strong>
+${escapeHTML(item.name)}
+</strong>
+
+<br>
+
+Size:
+${escapeHTML(item.size)}
+
+<br>
+
+₹${Number(item.price)
+.toLocaleString("en-IN")}
+
+<div class="qty">
+
+<button
+onclick="changeQuantity(${index},-1)">
+−
+</button>
+
+<span>
+${item.quantity}
+</span>
+
+<button
+onclick="changeQuantity(${index},1)">
++
+</button>
+
+</div>
+
+</div>
+
+<button
+class="remove"
+onclick="removeCart(${index})">
+REMOVE
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+document.getElementById("cartTotal")
+.innerText=
+getTotal().toLocaleString("en-IN");
+
+}
+
+/* =========================
+QUANTITY
+========================= */
+
+function changeQuantity(index,change){
+
+if(!cart[index])return;
+
+cart[index].quantity+=change;
+
+if(cart[index].quantity<=0){
+
+cart.splice(index,1);
+
+}
+
+saveCart();
+renderCart();
+
+}
+
+/* =========================
+REMOVE CART
+========================= */
+
+function removeCart(index){
+
+cart.splice(index,1);
+
+saveCart();
+renderCart();
+
+}
+
+/* =========================
+DETAILS
+========================= */
+
+function openDetails(index){
+
+refreshProducts();
+
+selectedProduct=products[index];
+
+if(!selectedProduct)return;
+
+const p=selectedProduct;
+const price=getFinalPrice(p);
+const stock=Number(p.stock||0);
+
+let sizeOptions=
+(p.sizes||"M,L,XL,XXL")
+.split(",")
+.map(s=>s.trim())
+.filter(Boolean);
+
+const sizeHTML=sizeOptions.map(size=>`
+<option value="${escapeHTML(size)}">
+Size ${escapeHTML(size)}
+</option>
+`).join("");
+
+document.getElementById("detailsContent")
+.innerHTML=`
+
+<div class="detail-layout">
+
+<div>
+
+<img
+class="detail-image"
+src="${escapeHTML(p.image||"")}"
+alt="${escapeHTML(p.name||"Product")}">
+
+</div>
+
+<div class="detail-info">
+
+<p>
+${escapeHTML(p.category||"")}
+</p>
+
+<h2>
+${escapeHTML(p.name||"")}
+</h2>
+
+<div class="detail-price">
+₹${price.toLocaleString("en-IN")}
+</div>
+
+<div class="detail-description">
+${escapeHTML(
+p.description||
+"Premium quality fashion product."
+)}
+</div>
+
+<p class="${
+stock<=0?"out-stock":"in-stock"
+}">
+
+${
+stock<=0
+?"Out of Stock"
+:
+stock<=3
+?"Only "+stock+" left"
+:"In Stock"
+}
+
+</p>
+
+<select id="detailSize">
+${sizeHTML}
+</select>
+
+<button
+class="add"
+onclick="addDetailToCart()"
+${stock<=0?"disabled":""}>
+${stock<=0?"OUT OF STOCK":"ADD TO CART"}
+</button>
+
+<button
+class="buy"
+onclick="buyDetailNow()"
+${stock<=0?"disabled":""}>
+${stock<=0?"OUT OF STOCK":"BUY NOW"}
+</button>
+
+</div>
+</div>
+`;
+
+document
+.getElementById("detailsModal")
+.classList.add("show");
+
+}
+
+/* =========================
+DETAIL ADD
+========================= */
+
+function addDetailToCart(){
+
+if(!selectedProduct)return;
+
+const size=
+document.getElementById("detailSize").value;
+
+const price=
+getFinalPrice(selectedProduct);
+
+const existing=cart.find(item=>
+Number(item.id)===
+Number(selectedProduct.id) &&
+item.size===size
+);
+
+if(existing){
+
+existing.quantity++;
+
+}else{
+
+cart.push({
+
+id:selectedProduct.id,
+name:selectedProduct.name,
+price:price,
+size:size,
+quantity:1
+
+});
+
+}
+
+saveCart();
+
+alert(
+selectedProduct.name+
+" added to cart."
+);
+
+}
+
+/* =========================
+DETAIL BUY
+========================= */
+
+function buyDetailNow(){
+
+if(!selectedProduct)return;
+
+const size=
+document.getElementById("detailSize").value;
+
+const price=
+getFinalPrice(selectedProduct);
+
+cart=[{
+
+id:selectedProduct.id,
+name:selectedProduct.name,
+price:price,
+size:size,
+quantity:1
+
+}];
+
+saveCart();
+
+closeModal("detailsModal");
+
+openCheckout();
+
+}
+
+/* =========================
+BUY NOW
+========================= */
+
+function buyNow(index){
+
+refreshProducts();
+
+const product=products[index];
+
+if(!product)return;
+
+const stock=Number(product.stock||0);
+
+if(stock<=0){
+
+alert("This product is out of stock.");
+return;
+
+}
+
+const sizeElement=
+document.getElementById("size"+index);
+
+const size=sizeElement?
+sizeElement.value:
+"M";
+
+const price=getFinalPrice(product);
+
+cart=[{
+
+id:product.id,
+name:product.name,
+price:price,
+size:size,
+quantity:1
+
+}];
+
+saveCart();
+
+openCheckout();
+
+}
+
+/* =========================
+WISHLIST
+========================= */
+
+function toggleWishlist(index){
+
+refreshProducts();
+
+const product=products[index];
+
+if(!product)return;
+
+const id=product.id;
+
+const oldIndex=wishlist.findIndex(
+item=>
+String(item)===String(id) ||
+String(item)===String(product.name)
+);
+
+if(oldIndex>=0){
+
+wishlist.splice(oldIndex,1);
+
+}else{
+
+wishlist.push(id);
+
+}
+
+localStorage.setItem(
+"zyvoraWishlist",
+JSON.stringify(wishlist)
+);
+
+displayProducts();
+
+}
+
+/* =========================
+OPEN WISHLIST
+========================= */
+
+function openWishlist(){
+
+refreshProducts();
+
+const box=
+document.getElementById("wishlistItems");
+
+if(wishlist.length===0){
+
+box.innerHTML=`
+<p style="
+text-align:center;
+padding:30px;
+color:#777;">
+Your wishlist is empty.
+</p>`;
+
+}else{
+
+box.innerHTML="";
+
+wishlist.forEach((idOrName,index)=>{
+
+const product=products.find(
+p=>
+String(p.id)===String(idOrName) ||
+String(p.name)===String(idOrName)
+);
+
+if(product){
+
+box.innerHTML+=`
+
+<div class="cart-item">
+
+<div>
+
+<strong>
+${escapeHTML(product.name)}
+</strong>
+
+<br>
+
+₹${getFinalPrice(product)
+.toLocaleString("en-IN")}
+
+</div>
+
+<button
+class="remove"
+onclick="removeWishlist('${String(product.id)}')">
+REMOVE
+</button>
+
+</div>
+
+`;
+
+}
+
+});
+
+}
+
+document
+.getElementById("wishlistModal")
+.classList.add("show");
+
+}
+
+/* =========================
+REMOVE WISHLIST
+========================= */
+
+function removeWishlist(id){
+
+wishlist=wishlist.filter(
+item=>
+String(item)!==String(id)
+);
+
+localStorage.setItem(
+"zyvoraWishlist",
+JSON.stringify(wishlist)
+);
+
+displayProducts();
+
+openWishlist();
+
+}
+
+/* =========================
+CHECKOUT
+========================= */
+
+function openCheckout(){
+
+if(cart.length===0){
+
+alert("Your cart is empty.");
+return;
+
+}
+
+document.getElementById("checkoutTotal")
+.innerText=
+getTotal().toLocaleString("en-IN");
+
+closeModal("cartModal");
+
+document
+.getElementById("checkoutModal")
+.classList.add("show");
+
+}
+
+/* =========================
+ORDER ID
+========================= */
+
+function generateOrderID(){
+
+const time=
+Date.now()
+.toString()
+.slice(-8);
+
+const random=
+Math.floor(Math.random()*900+100);
+
+return "ZYV-"+time+"-"+random;
+
+}
+
+/* =========================
+CUSTOMER DATA
+========================= */
+
+function getCustomerData(){
+
+const name=
+document.getElementById("customerName")
+.value.trim();
+
+const phone=
+document.getElementById("customerPhone")
+.value.trim();
+
+const address=
+document.getElementById("customerAddress")
+.value.trim();
+
+if(!name||!phone||!address){
+
+alert(
+"Please enter your name, mobile number and address."
+);
+
+return null;
+
+}
+
+return{
+name:name,
+phone:phone,
+address:address
+};
+
+}
+
+/* =========================
+UPI
+========================= */
+
+function payWithUPI(){
+
+const customer=getCustomerData();
+
+if(!customer)return;
+
+if(cart.length===0){
+
+alert("Your cart is empty.");
+return;
+
+}
+
+const orderID=generateOrderID();
+const amount=getTotal().toFixed(2);
+
+lastOrder={
+
+id:orderID,
+customer:customer,
+cart:[...cart],
+total:amount,
+payment:"UPI"
+
+};
+
+const upiLink=
+"upi://pay"+
+"?pa="+encodeURIComponent(UPI_ID)+
+"&pn="+encodeURIComponent(STORE_NAME)+
+"&am="+encodeURIComponent(amount)+
+"&cu=INR"+
+"&tn="+encodeURIComponent(
+"Zyvora "+orderID
+);
+
+window.location.href=upiLink;
+
+}
+
+/* =========================
+WHATSAPP ORDER
+========================= */
+
+function sendWhatsAppOrder(){
+
+const customer=getCustomerData();
+
+if(!customer)return;
+
+if(cart.length===0){
+
+alert("Your cart is empty.");
+return;
+
+}
+
+const paymentElement=
+document.querySelector(
+'input[name="payment"]:checked'
+);
+
+const payment=
+paymentElement?
+paymentElement.value:
+"COD";
+
+const orderID=generateOrderID();
+
+lastOrder={
+
+id:orderID,
+customer:customer,
+cart:[...cart],
+total:getTotal(),
+payment:payment
+
+};
+
+saveOrderToAdmin();
+
+showConfirmation();
+
+}
+
+/* =========================
+SAVE ORDER
+========================= */
+
+function saveOrderToAdmin(){
+
+if(!lastOrder)return;
+
+let orders=JSON.parse(
+localStorage.getItem("zyvoraOrders")||"[]"
+);
+
+orders.push({
+
+id:lastOrder.id,
+
+customer:lastOrder.customer.name,
+
+name:lastOrder.customer.name,
+
+phone:lastOrder.customer.phone,
+
+mobile:lastOrder.customer.phone,
+
+address:lastOrder.customer.address,
+
+total:Number(lastOrder.total),
+
+status:"New",
+
+payment:lastOrder.payment,
+
+items:lastOrder.cart,
+
+date:new Date().toISOString()
+
+});
+
+localStorage.setItem(
+"zyvoraOrders",
+JSON.stringify(orders)
+);
+
+}
+
+/* =========================
+CONFIRMATION
+========================= */
+
+function showConfirmation(){
+
+document.getElementById("orderId")
+.innerText=lastOrder.id;
+
+closeModal("checkoutModal");
+
+document
+.getElementById("confirmationModal")
+.classList.add("show");
+
+}
+
+/* =========================
+SEND WHATSAPP
+========================= */
+
+function sendLastOrderWhatsApp(){
+
+if(!lastOrder){
+
+alert("No order found.");
+return;
+
+}
+
+let message=
+"Hello Zyvora! I want to place an order.\n\n";
+
+message+=
+"Order ID: "+
+lastOrder.id+
+"\n";
+
+message+=
+"Customer Name: "+
+lastOrder.customer.name+
+"\n";
+
+message+=
+"Mobile: "+
+lastOrder.customer.phone+
+"\n";
+
+message+=
+"Address: "+
+lastOrder.customer.address+
+"\n\n";
+
+message+=
+"ORDER DETAILS:\n";
+
+lastOrder.cart.forEach(
+(item,index)=>{
+
+message+=
+(index+1)+
+". "+
+item.name+
+" | Size: "+
+item.size+
+" | Qty: "+
+item.quantity+
+" | ₹"+
+(item.price*item.quantity)+
+"\n";
+
+});
+
+message+=
+"\nTotal: ₹"+
+lastOrder.total+
+"\n";
+
+message+=
+"Payment Method: "+
+lastOrder.payment+
+"\n";
+
+const url=
+"https://wa.me/"+
+WHATSAPP_NUMBER+
+"?text="+
+encodeURIComponent(message);
+
+window.open(url,"_blank");
+
+}
+
+/* =========================
+MODAL
+========================= */
+
+function closeModal(id){
+
+const modal=document.getElementById(id);
+
+if(modal){
+modal.classList.remove("show");
+}
+
+}
+
+/* =========================
+UPDATE IF ADMIN CHANGES
+========================= */
+
+window.addEventListener(
+"storage",
+function(event){
+
+if(event.key==="zyvoraProducts"){
+
+displayProducts();
+
+}
+
+});
+
+/* =========================
+START
+========================= */
+
+displayProducts();
+updateCounts();
+
+</script>
+
+</body>
+</html>
