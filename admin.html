@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ZYVORA Admin Panel</title>
 
 <style>
-
 *{
 box-sizing:border-box;
 margin:0;
@@ -31,9 +26,7 @@ font-weight:bold;
 cursor:pointer;
 }
 
-input,
-select,
-textarea{
+input,select,textarea{
 width:100%;
 padding:13px;
 margin:7px 0;
@@ -184,11 +177,10 @@ margin-bottom:15px;
 table{
 width:100%;
 border-collapse:collapse;
-min-width:800px;
+min-width:850px;
 }
 
-th,
-td{
+th,td{
 padding:12px;
 border-bottom:1px solid #eee;
 text-align:left;
@@ -270,10 +262,6 @@ text-decoration:none;
 font-weight:bold;
 }
 
-.preview{
-margin-top:10px;
-}
-
 .status{
 padding:7px 10px;
 border-radius:20px;
@@ -295,15 +283,12 @@ gap:10px;
 }
 
 @media(max-width:800px){
-
 .cards{
 grid-template-columns:repeat(2,1fr);
 }
-
 }
 
 @media(max-width:550px){
-
 .cards{
 grid-template-columns:1fr;
 }
@@ -320,18 +305,17 @@ header{
 padding:15px;
 }
 
+.brand{
+font-size:14px;
+letter-spacing:3px;
 }
-
+}
 </style>
-
 </head>
 
 <body>
 
-
-<!-- =========================
-LOGIN
-========================= -->
+<!-- LOGIN -->
 
 <div class="login" id="loginScreen">
 
@@ -358,9 +342,7 @@ placeholder="Password">
 <button
 class="login-btn"
 onclick="login()">
-
 LOGIN
-
 </button>
 
 <div
@@ -371,20 +353,14 @@ id="message">
 <a
 href="index.html"
 class="store-link">
-
 ← Back to Zyvora Store
-
 </a>
 
 </div>
-
 </div>
 
 
-
-<!-- =========================
-ADMIN PANEL
-========================= -->
+<!-- ADMIN PANEL -->
 
 <div id="adminPanel">
 
@@ -397,9 +373,7 @@ ZYVORA ADMIN
 <button
 class="logout"
 onclick="logout()">
-
 Logout
-
 </button>
 
 </header>
@@ -408,46 +382,35 @@ Logout
 <div class="container">
 
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 
 <div class="nav">
 
 <button
 class="active"
 onclick="showPage('dashboard',this)">
-
 📊 Dashboard
-
 </button>
 
 <button
 onclick="showPage('products',this)">
-
 📦 Products
-
 </button>
 
 <button
 onclick="showPage('orders',this)">
-
 🧾 Orders
-
 </button>
 
 <button
 onclick="showPage('settings',this)">
-
 ⚙️ Settings
-
 </button>
 
 </div>
 
 
-
-<!-- =========================
-DASHBOARD
-========================= -->
+<!-- DASHBOARD -->
 
 <div
 id="dashboard"
@@ -458,46 +421,25 @@ class="page active">
 <div class="cards">
 
 <div class="card">
-
 Products
-
-<strong id="productCount">
-0
-</strong>
-
+<strong id="productCount">0</strong>
 </div>
 
-
 <div class="card">
-
 Orders
-
-<strong id="orderCount">
-0
-</strong>
-
+<strong id="orderCount">0</strong>
 </div>
 
-
 <div class="card">
-
 Sales
-
 <strong>
 ₹<span id="sales">0</span>
 </strong>
-
 </div>
 
-
 <div class="card">
-
 Low Stock
-
-<strong id="lowStock">
-0
-</strong>
-
+<strong id="lowStock">0</strong>
 </div>
 
 </div>
@@ -509,11 +451,10 @@ Low Stock
 Recent Orders
 </h2>
 
-<div id="recentOrders"
+<div
+id="recentOrders"
 class="empty">
-
 No orders yet.
-
 </div>
 
 </div>
@@ -521,10 +462,7 @@ No orders yet.
 </div>
 
 
-
-<!-- =========================
-PRODUCTS
-========================= -->
+<!-- PRODUCTS -->
 
 <div
 id="products"
@@ -536,15 +474,11 @@ Products
 
 <div class="box">
 
-
 <button
 class="add"
 onclick="openAddModal()">
-
 + Add Product
-
 </button>
-
 
 <input
 class="search"
@@ -552,48 +486,32 @@ id="searchProduct"
 placeholder="🔍 Search products..."
 oninput="renderProducts()">
 
-
 <table>
 
 <thead>
 
 <tr>
-
 <th>Image</th>
-
 <th>Product</th>
-
 <th>Category</th>
-
 <th>Price</th>
-
 <th>Discount</th>
-
 <th>Stock</th>
-
 <th>Action</th>
-
 </tr>
 
 </thead>
 
-
-<tbody
-id="productList">
-
+<tbody id="productList">
 </tbody>
 
 </table>
 
 </div>
-
 </div>
 
 
-
-<!-- =========================
-ORDERS
-========================= -->
+<!-- ORDERS -->
 
 <div
 id="orders"
@@ -610,24 +528,16 @@ Orders
 <thead>
 
 <tr>
-
 <th>Order ID</th>
-
 <th>Customer</th>
-
 <th>Phone</th>
-
 <th>Total</th>
-
 <th>Status</th>
-
 </tr>
 
 </thead>
 
-<tbody
-id="orderList">
-
+<tbody id="orderList">
 </tbody>
 
 </table>
@@ -637,10 +547,7 @@ id="orderList">
 </div>
 
 
-
-<!-- =========================
-SETTINGS
-========================= -->
+<!-- SETTINGS -->
 
 <div
 id="settings"
@@ -660,7 +567,6 @@ WhatsApp Number
 id="whatsapp"
 placeholder="919876543210">
 
-
 <label>
 UPI ID
 </label>
@@ -669,36 +575,26 @@ UPI ID
 id="upi"
 placeholder="yourname@upi">
 
-
 <button
 class="save"
 onclick="saveSettings()">
-
 Save Settings
-
 </button>
-
 
 <p
 id="saved"
 style="margin-top:12px">
-
 </p>
 
 </div>
 
 </div>
 
-
+</div>
 </div>
 
-</div>
 
-
-
-<!-- =========================
-PRODUCT MODAL
-========================= -->
+<!-- PRODUCT MODAL -->
 
 <div
 class="modal"
@@ -709,7 +605,6 @@ id="productModal">
 <h2 id="modalTitle">
 Add Product
 </h2>
-
 
 <label>
 Product Name
@@ -729,11 +624,10 @@ id="pImage"
 placeholder="https://example.com/product.jpg"
 oninput="previewImage()">
 
-
 <img
 id="imagePreview"
-class="product-img preview"
-style="display:none;">
+class="product-img"
+style="display:none;margin-top:5px;">
 
 
 <div class="form-grid">
@@ -747,11 +641,8 @@ Category
 <select id="pCategory">
 
 <option>Men</option>
-
 <option>Women</option>
-
 <option>Shoes</option>
-
 <option>Accessories</option>
 
 </select>
@@ -821,7 +712,7 @@ Sizes
 
 <input
 id="pSizes"
-placeholder="S, M, L, XL">
+placeholder="S,M,L,XL">
 
 
 <label>
@@ -839,37 +730,28 @@ placeholder="Premium quality fashion product...">
 <button
 class="save"
 onclick="saveProduct()">
-
 Save Product
-
 </button>
-
 
 <button
 class="cancel"
 onclick="closeProductModal()">
-
 Cancel
-
 </button>
 
 </div>
 
 </div>
-
 </div>
 
 
-
 <script>
-
 
 /* =========================
 LOGIN
 ========================= */
 
 const USERNAME="admin";
-
 const PASSWORD="zyvora123";
 
 
@@ -880,7 +762,6 @@ document.getElementById("username").value.trim();
 
 const pass=
 document.getElementById("password").value;
-
 
 if(
 user===USERNAME &&
@@ -925,7 +806,6 @@ location.reload();
 }
 
 
-
 /* =========================
 AUTO LOGIN
 ========================= */
@@ -947,27 +827,512 @@ document.getElementById(
 }
 
 
-
 /* =========================
-DATA
+IMAGE HELPER
 ========================= */
 
-let products=JSON.parse(
+function img(id){
+
+return "https://images.unsplash.com/"
++id+
+"?auto=format&fit=crop&w=900&q=80";
+
+}
+
+
+/* =========================
+30 PRODUCTS
+========================= */
+
+const defaultProducts=[
+
+{
+id:1,
+name:"Premium Black Jacket",
+price:4999,
+category:"Men",
+image:img("photo-1551028719-00167b16eac5"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"M,L,XL,XXL",
+description:"Premium modern black jacket designed for a clean and confident everyday look."
+},
+
+{
+id:2,
+name:"Classic White T-Shirt",
+price:999,
+category:"Men",
+image:img("photo-1521572163474-6864f9cf17ab"),
+discount:0,
+stock:20,
+color:"White",
+sizes:"S,M,L,XL",
+description:"Clean classic white T-shirt with a comfortable everyday fashion style."
+},
+
+{
+id:3,
+name:"Black Oversized T-Shirt",
+price:1299,
+category:"Men",
+image:img("photo-1503341504253-dff4815485f1"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"M,L,XL,XXL",
+description:"Premium oversized black T-shirt for modern street style."
+},
+
+{
+id:4,
+name:"Blue Casual Jeans",
+price:2499,
+category:"Men",
+image:img("photo-1542272604-787c3835535d"),
+discount:0,
+stock:20,
+color:"Blue",
+sizes:"30,32,34,36",
+description:"Classic blue casual jeans designed for everyday fashion."
+},
+
+{
+id:5,
+name:"Men Black Sneakers",
+price:2999,
+category:"Shoes",
+image:img("photo-1542291026-7eec264c27ff"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"7,8,9,10,11",
+description:"Modern black sneakers suitable for everyday outfits."
+},
+
+{
+id:6,
+name:"Men Sunglasses",
+price:1199,
+category:"Accessories",
+image:img("photo-1511499767150-a48a237f0083"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Premium black sunglasses for a stylish everyday look."
+},
+
+{
+id:7,
+name:"Men Black Belt",
+price:899,
+category:"Accessories",
+image:img("photo-1624222247344-550fb60583dc"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"30,32,34,36,38",
+description:"Classic black belt with a clean premium finish."
+},
+
+{
+id:8,
+name:"Men Brown Belt",
+price:899,
+category:"Accessories",
+image:img("photo-1553062407-98eeb64c6a62"),
+discount:0,
+stock:20,
+color:"Brown",
+sizes:"30,32,34,36,38",
+description:"Classic brown belt for everyday outfits."
+},
+
+{
+id:9,
+name:"Men Cotton Socks",
+price:499,
+category:"Accessories",
+image:img("photo-1586350977771-b3b0abd50c82"),
+discount:0,
+stock:20,
+color:"Mixed",
+sizes:"Free Size",
+description:"Comfortable cotton socks pack."
+},
+
+{
+id:10,
+name:"Men Classic Cap",
+price:699,
+category:"Accessories",
+image:img("photo-1521369909029-2afed882baee"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Simple classic black cap for everyday fashion."
+},
+
+{
+id:11,
+name:"Women Black Dress",
+price:2999,
+category:"Women",
+image:img("photo-1539008835657-9e8e9680c956"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"S,M,L,XL",
+description:"Elegant black dress for a modern stylish look."
+},
+
+{
+id:12,
+name:"Women White Top",
+price:1499,
+category:"Women",
+image:img("photo-1551488831-00ddcb6c6bd3"),
+discount:0,
+stock:20,
+color:"White",
+sizes:"S,M,L,XL",
+description:"Clean white top with a modern fashion style."
+},
+
+{
+id:13,
+name:"Women Blue Jeans",
+price:2399,
+category:"Women",
+image:img("photo-1541099649105-f69ad21f3246"),
+discount:0,
+stock:20,
+color:"Blue",
+sizes:"26,28,30,32",
+description:"Classic blue jeans designed for modern casual outfits."
+},
+
+{
+id:14,
+name:"Women Handbag",
+price:2499,
+category:"Accessories",
+image:img("photo-1584917865442-de89df76afd3"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Premium black handbag for everyday fashion."
+},
+
+{
+id:15,
+name:"Women Sunglasses",
+price:1299,
+category:"Accessories",
+image:img("photo-1572635196237-14b3f281503f"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Stylish sunglasses designed for a modern look."
+},
+
+{
+id:16,
+name:"Women Black Heels",
+price:2799,
+category:"Shoes",
+image:img("photo-1543163521-1bf539c55dd2"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"5,6,7,8",
+description:"Elegant black heels for a sophisticated fashion look."
+},
+
+{
+id:17,
+name:"Women White Sneakers",
+price:2599,
+category:"Shoes",
+image:img("photo-1549298916-b41d501d3772"),
+discount:0,
+stock:20,
+color:"White",
+sizes:"5,6,7,8",
+description:"Clean white sneakers for everyday outfits."
+},
+
+{
+id:18,
+name:"Women Fashion Belt",
+price:799,
+category:"Accessories",
+image:img("photo-1594223274512-ad4803739b7c"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Modern black fashion belt."
+},
+
+{
+id:19,
+name:"Women Socks Pack",
+price:449,
+category:"Accessories",
+image:img("photo-1582966772680-860e372bb558"),
+discount:0,
+stock:20,
+color:"Mixed",
+sizes:"Free Size",
+description:"Comfortable mixed socks pack."
+},
+
+{
+id:20,
+name:"Women Casual Jacket",
+price:2699,
+category:"Women",
+image:img("photo-1548883354-7622d03aca27"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"S,M,L,XL",
+description:"Modern casual jacket for women."
+},
+
+{
+id:21,
+name:"Premium Black Wallet",
+price:999,
+category:"Accessories",
+image:img("photo-1627123424574-724758594e93"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Premium black wallet with a clean design."
+},
+
+{
+id:22,
+name:"Fashion Watch",
+price:1999,
+category:"Accessories",
+image:img("photo-1524805444758-089113d48a6d"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Modern fashion watch for everyday style."
+},
+
+{
+id:23,
+name:"Classic Brown Loafers",
+price:2899,
+category:"Shoes",
+image:img("photo-1533867617858-e7b97e060509"),
+discount:0,
+stock:20,
+color:"Brown",
+sizes:"7,8,9,10,11",
+description:"Classic brown loafers with a premium finish."
+},
+
+{
+id:24,
+name:"Women Beige Flats",
+price:1799,
+category:"Shoes",
+image:img("photo-1560343090-f0409e92791a"),
+discount:0,
+stock:20,
+color:"Beige",
+sizes:"5,6,7,8",
+description:"Comfortable beige flats for everyday wear."
+},
+
+{
+id:25,
+name:"Men Polo Shirt",
+price:1599,
+category:"Men",
+image:img("photo-1625910513413-5fc45c1e5c6b"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"M,L,XL,XXL",
+description:"Premium polo shirt for a smart casual look."
+},
+
+{
+id:26,
+name:"Women Premium Top",
+price:1699,
+category:"Women",
+image:img("photo-1564257577054-2e1d3cf2d0d1"),
+discount:0,
+stock:20,
+color:"Cream",
+sizes:"S,M,L,XL",
+description:"Premium cream top with a modern elegant style."
+},
+
+{
+id:27,
+name:"Black Crossbody Bag",
+price:2199,
+category:"Accessories",
+image:img("photo-1590874103328-eac38a683ce7"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"Free Size",
+description:"Modern black crossbody bag."
+},
+
+{
+id:28,
+name:"Sports Sneakers",
+price:3299,
+category:"Shoes",
+image:img("photo-1552346154-21d32810aba3"),
+discount:0,
+stock:20,
+color:"White",
+sizes:"7,8,9,10,11",
+description:"Modern sports sneakers for everyday comfort."
+},
+
+{
+id:29,
+name:"Premium Denim Jacket",
+price:3199,
+category:"Men",
+image:img("photo-1495105787522-5334e3ffa0ef"),
+discount:0,
+stock:20,
+color:"Blue",
+sizes:"M,L,XL,XXL",
+description:"Premium blue denim jacket."
+},
+
+{
+id:30,
+name:"Women Evening Heels",
+price:3299,
+category:"Shoes",
+image:img("photo-1595950653106-6c9ebd614d3a"),
+discount:0,
+stock:20,
+color:"Black",
+sizes:"5,6,7,8",
+description:"Elegant black evening heels."
+}
+
+];
+
+
+/* =========================
+LOAD PRODUCTS
+========================= */
+
+function loadProducts(){
+
+let saved=
 localStorage.getItem(
 "zyvoraProducts"
-) || "[]"
 );
 
+
+/*
+IMPORTANT:
+If products already exist,
+keep their edited price,
+stock and discount.
+*/
+
+if(saved){
+
+try{
+
+let savedProducts=
+JSON.parse(saved);
+
+defaultProducts.forEach(defaultProduct=>{
+
+const exists=
+savedProducts.find(
+p=>Number(p.id)===Number(defaultProduct.id)
+);
+
+if(!exists){
+
+savedProducts.push(
+JSON.parse(
+JSON.stringify(defaultProduct)
+)
+);
+
+}
+
+});
+
+localStorage.setItem(
+"zyvoraProducts",
+JSON.stringify(savedProducts)
+);
+
+return savedProducts;
+
+}catch(error){
+
+localStorage.setItem(
+"zyvoraProducts",
+JSON.stringify(defaultProducts)
+);
+
+return JSON.parse(
+JSON.stringify(defaultProducts)
+);
+
+}
+
+}
+
+
+/*
+First time:
+create all 30 products.
+*/
+
+localStorage.setItem(
+"zyvoraProducts",
+JSON.stringify(defaultProducts)
+);
+
+return JSON.parse(
+JSON.stringify(defaultProducts)
+);
+
+}
+
+
+let products=loadProducts();
 
 let orders=JSON.parse(
 localStorage.getItem(
 "zyvoraOrders"
-) || "[]"
+)||"[]"
 );
 
-
 let editingId=null;
-
 
 
 /* =========================
@@ -982,11 +1347,9 @@ document
 p.classList.remove("active");
 });
 
-
 document
 .getElementById(page)
 .classList.add("active");
-
 
 document
 .querySelectorAll(".nav button")
@@ -994,11 +1357,11 @@ document
 b.classList.remove("active");
 });
 
-
 button.classList.add("active");
 
-}
+render();
 
+}
 
 
 /* =========================
@@ -1013,9 +1376,7 @@ document.getElementById(
 "modalTitle"
 ).textContent="Add Product";
 
-
 clearForm();
-
 
 document.getElementById(
 "productModal"
@@ -1024,71 +1385,77 @@ document.getElementById(
 }
 
 
-
 /* =========================
-EDIT PRODUCT
+EDIT
 ========================= */
 
 function editProduct(id){
 
 const product=
-products.find(p=>p.id===id);
+products.find(
+p=>Number(p.id)===Number(id)
+);
 
 if(!product)return;
 
 editingId=id;
 
-
 document.getElementById(
 "modalTitle"
 ).textContent="Edit Product";
 
+document.getElementById(
+"pName"
+).value=
+product.name||"";
 
-document.getElementById("pName").value=
-product.name || "";
+document.getElementById(
+"pImage"
+).value=
+product.image||"";
 
+document.getElementById(
+"pCategory"
+).value=
+product.category||"Men";
 
-document.getElementById("pImage").value=
-product.image || "";
+document.getElementById(
+"pPrice"
+).value=
+product.price||"";
 
+document.getElementById(
+"pDiscount"
+).value=
+product.discount||0;
 
-document.getElementById("pCategory").value=
-product.category || "Men";
+document.getElementById(
+"pStock"
+).value=
+product.stock||0;
 
+document.getElementById(
+"pColor"
+).value=
+product.color||"";
 
-document.getElementById("pPrice").value=
-product.price || "";
+document.getElementById(
+"pSizes"
+).value=
+product.sizes||"";
 
-
-document.getElementById("pDiscount").value=
-product.discount || 0;
-
-
-document.getElementById("pStock").value=
-product.stock || 0;
-
-
-document.getElementById("pColor").value=
-product.color || "";
-
-
-document.getElementById("pSizes").value=
-product.sizes || "";
-
-
-document.getElementById("pDescription").value=
-product.description || "";
-
+document.getElementById(
+"pDescription"
+).value=
+product.description||"";
 
 previewImage();
-
 
 document.getElementById(
 "productModal"
 ).classList.add("show");
 
 }
-
 
 
 /* =========================
@@ -1098,124 +1465,130 @@ SAVE PRODUCT
 function saveProduct(){
 
 const name=
-document.getElementById("pName")
-.value.trim();
-
+document.getElementById(
+"pName"
+).value.trim();
 
 const image=
-document.getElementById("pImage")
-.value.trim();
-
+document.getElementById(
+"pImage"
+).value.trim();
 
 const category=
-document.getElementById("pCategory")
-.value;
-
+document.getElementById(
+"pCategory"
+).value;
 
 const price=
 Number(
-document.getElementById("pPrice")
-.value
+document.getElementById(
+"pPrice"
+).value
 );
-
 
 const discount=
 Number(
-document.getElementById("pDiscount")
-.value
+document.getElementById(
+"pDiscount"
+).value
 );
-
 
 const stock=
 Number(
-document.getElementById("pStock")
-.value
+document.getElementById(
+"pStock"
+).value
 );
 
-
 const color=
-document.getElementById("pColor")
-.value.trim();
-
+document.getElementById(
+"pColor"
+).value.trim();
 
 const sizes=
-document.getElementById("pSizes")
-.value.trim();
-
+document.getElementById(
+"pSizes"
+).value.trim();
 
 const description=
-document.getElementById("pDescription")
-.value.trim();
+document.getElementById(
+"pDescription"
+).value.trim();
 
 
 if(!name){
 
-alert("Please enter product name.");
+alert(
+"Please enter product name."
+);
 
 return;
 
 }
-
 
 if(price<=0){
 
-alert("Please enter a valid price.");
+alert(
+"Please enter a valid price."
+);
 
 return;
 
 }
-
 
 if(stock<0){
 
-alert("Stock cannot be negative.");
+alert(
+"Stock cannot be negative."
+);
+
+return;
+
+}
+
+if(
+discount<0 ||
+discount>100
+){
+
+alert(
+"Discount must be between 0 and 100."
+);
 
 return;
 
 }
 
 
-if(discount<0 || discount>100){
+/* EDIT */
 
-alert("Discount must be between 0 and 100.");
-
-return;
-
-}
-
-
-
-if(editingId){
+if(editingId!==null){
 
 const product=
 products.find(
-p=>p.id===editingId
+p=>Number(p.id)===Number(editingId)
 );
-
 
 if(product){
 
 product.name=name;
-
 product.image=image;
-
 product.category=category;
-
 product.price=price;
-
 product.discount=discount;
-
 product.stock=stock;
-
 product.color=color;
-
 product.sizes=sizes;
-
 product.description=description;
 
 }
 
-}else{
+}
+
+
+/* ADD */
+
+else{
 
 products.push({
 
@@ -1244,28 +1617,30 @@ description:description
 }
 
 
+/* SAVE */
+
 localStorage.setItem(
 "zyvoraProducts",
 JSON.stringify(products)
 );
-
 
 closeProductModal();
 
 render();
 
 alert(
-editingId
-? "Product updated successfully!"
-: "Product added successfully!"
+editingId!==null
+?
+"Product updated successfully!"
+:
+"Product added successfully!"
 );
 
 }
 
 
-
 /* =========================
-DELETE PRODUCT
+DELETE
 ========================= */
 
 function deleteProduct(id){
@@ -1280,23 +1655,19 @@ return;
 
 }
 
-
 products=
 products.filter(
-p=>p.id!==id
+p=>Number(p.id)!==Number(id)
 );
-
 
 localStorage.setItem(
 "zyvoraProducts",
 JSON.stringify(products)
 );
 
-
 render();
 
 }
-
 
 
 /* =========================
@@ -1305,18 +1676,17 @@ PRODUCT TABLE
 
 function renderProducts(){
 
-products=JSON.parse(
+products=
+JSON.parse(
 localStorage.getItem(
 "zyvoraProducts"
-) || "[]"
+)||"[]"
 );
-
 
 const list=
 document.getElementById(
 "productList"
 );
-
 
 const search=
 document.getElementById(
@@ -1325,23 +1695,20 @@ document.getElementById(
 .toLowerCase()
 .trim();
 
-
 const filtered=
 products.filter(p=>
 
-(p.name || "")
+(p.name||"")
 .toLowerCase()
 .includes(search)
 
 ||
 
-(p.category || "")
+(p.category||"")
 .toLowerCase()
 .includes(search)
 
 );
-
-
 
 list.innerHTML="";
 
@@ -1351,10 +1718,14 @@ if(filtered.length===0){
 list.innerHTML=`
 
 <tr>
+
 <td colspan="7"
 class="empty">
+
 No products found.
+
 </td>
+
 </tr>
 
 `;
@@ -1364,27 +1735,35 @@ return;
 }
 
 
-
 filtered.forEach(p=>{
 
 const discount=
-Number(p.discount || 0);
-
+Number(p.discount||0);
 
 const finalPrice=
 Math.round(
-Number(p.price) *
+Number(p.price||0)*
 (1-discount/100)
 );
 
-
 const image=
 p.image
-? `<img
+
+?
+
+`
+<img
 class="product-img"
 src="${escapeHTML(p.image)}"
-onerror="this.style.display='none'">`
-: `<div class="product-img"></div>`;
+onerror="this.style.display='none'">
+`
+
+:
+
+`
+<div class="product-img">
+</div>
+`;
 
 
 list.innerHTML+=`
@@ -1396,38 +1775,61 @@ ${image}
 </td>
 
 <td>
-<strong>${escapeHTML(p.name)}</strong>
+
+<strong>
+${escapeHTML(p.name)}
+</strong>
+
 <br>
+
 <small>
-${escapeHTML(p.color || "")}
+${escapeHTML(p.color||"")}
 </small>
+
 </td>
 
+
 <td>
-${escapeHTML(p.category || "")}
+${escapeHTML(p.category||"")}
 </td>
+
 
 <td>
 
 ₹${Number(p.price)
 .toLocaleString("en-IN")}
 
-${discount>0
-? `<br><small>
+${
+discount>0
+
+?
+
+`
+<br>
+<small>
 Final ₹${finalPrice
 .toLocaleString("en-IN")}
-</small>`
-:""}
+</small>
+`
+
+:
+
+""
+
+}
 
 </td>
+
 
 <td>
 ${discount}%
 </td>
 
+
 <td>
-${p.stock}
+${Number(p.stock||0)}
 </td>
+
 
 <td>
 
@@ -1458,7 +1860,6 @@ Delete
 }
 
 
-
 /* =========================
 CLEAR FORM
 ========================= */
@@ -1469,53 +1870,43 @@ document.getElementById(
 "pName"
 ).value="";
 
-
 document.getElementById(
 "pImage"
 ).value="";
-
 
 document.getElementById(
 "pCategory"
 ).value="Men";
 
-
 document.getElementById(
 "pPrice"
 ).value="";
-
 
 document.getElementById(
 "pDiscount"
 ).value="0";
 
-
 document.getElementById(
 "pStock"
-).value="";
-
+).value="20";
 
 document.getElementById(
 "pColor"
 ).value="";
 
-
 document.getElementById(
 "pSizes"
 ).value="";
 
-
 document.getElementById(
 "pDescription"
 ).value="";
-
 
 document.getElementById(
 "imagePreview"
 ).style.display="none";
 
 }
-
 
 
 /* =========================
@@ -1531,7 +1922,6 @@ document.getElementById(
 }
 
 
-
 /* =========================
 IMAGE PREVIEW
 ========================= */
@@ -1543,12 +1933,10 @@ document.getElementById(
 "pImage"
 ).value.trim();
 
-
 const preview=
 document.getElementById(
 "imagePreview"
 );
-
 
 if(url){
 
@@ -1565,25 +1953,23 @@ preview.style.display="none";
 }
 
 
-
 /* =========================
 ORDERS
 ========================= */
 
 function renderOrders(){
 
-orders=JSON.parse(
+orders=
+JSON.parse(
 localStorage.getItem(
 "zyvoraOrders"
-) || "[]"
+)||"[]"
 );
-
 
 const list=
 document.getElementById(
 "orderList"
 );
-
 
 list.innerHTML="";
 
@@ -1593,10 +1979,14 @@ if(orders.length===0){
 list.innerHTML=`
 
 <tr>
+
 <td colspan="5"
 class="empty">
+
 No orders yet.
+
 </td>
+
 </tr>
 
 `;
@@ -1604,7 +1994,6 @@ No orders yet.
 return;
 
 }
-
 
 
 orders.forEach(o=>{
@@ -1615,38 +2004,40 @@ list.innerHTML+=`
 
 <td>
 ${escapeHTML(
-o.id || "ORDER"
+o.id||"ORDER"
 )}
 </td>
 
 <td>
 ${escapeHTML(
-o.customer ||
-o.name ||
+o.customer||
+o.name||
 "Customer"
 )}
 </td>
 
 <td>
 ${escapeHTML(
-o.phone ||
-o.mobile ||
+o.phone||
+o.mobile||
 "-"
 )}
 </td>
 
 <td>
 ₹${Number(
-o.total || 0
+o.total||0
 ).toLocaleString("en-IN")}
 </td>
 
 <td>
 
 <span class="status">
+
 ${escapeHTML(
-o.status || "New"
+o.status||"New"
 )}
+
 </span>
 
 </td>
@@ -1660,24 +2051,24 @@ o.status || "New"
 }
 
 
-
 /* =========================
 DASHBOARD
 ========================= */
 
 function updateDashboard(){
 
-products=JSON.parse(
+products=
+JSON.parse(
 localStorage.getItem(
 "zyvoraProducts"
-) || "[]"
+)||"[]"
 );
 
-
-orders=JSON.parse(
+orders=
+JSON.parse(
 localStorage.getItem(
 "zyvoraOrders"
-) || "[]"
+)||"[]"
 );
 
 
@@ -1696,7 +2087,8 @@ orders.length;
 const totalSales=
 orders.reduce(
 (sum,o)=>
-sum+Number(o.total || 0),
+sum+
+Number(o.total||0),
 0
 );
 
@@ -1704,7 +2096,9 @@ sum+Number(o.total || 0),
 document.getElementById(
 "sales"
 ).textContent=
-totalSales.toLocaleString("en-IN");
+totalSales.toLocaleString(
+"en-IN"
+);
 
 
 const low=
@@ -1717,7 +2111,6 @@ document.getElementById(
 "lowStock"
 ).textContent=
 low;
-
 
 
 const recent=
@@ -1746,18 +2139,20 @@ orders
 
 <b>
 ${escapeHTML(
-o.id || "ORDER"
+o.id||"ORDER"
 )}
 </b>
 
 —
+
 ₹${Number(
-o.total || 0
+o.total||0
 ).toLocaleString("en-IN")}
 
 —
+
 ${escapeHTML(
-o.status || "New"
+o.status||"New"
 )}
 
 </p>
@@ -1766,7 +2161,6 @@ o.status || "New"
 .join("");
 
 }
-
 
 
 /* =========================
@@ -1780,7 +2174,7 @@ document.getElementById(
 ).value=
 localStorage.getItem(
 "zyvoraWhatsApp"
-) || "";
+)||"916283618166";
 
 
 document.getElementById(
@@ -1788,7 +2182,7 @@ document.getElementById(
 ).value=
 localStorage.getItem(
 "zyvoraUPI"
-) || "";
+)||"6283618166@fam";
 
 }
 
@@ -1797,16 +2191,13 @@ function saveSettings(){
 
 localStorage.setItem(
 "zyvoraWhatsApp",
-
 document.getElementById(
 "whatsapp"
 ).value.trim()
 );
 
-
 localStorage.setItem(
 "zyvoraUPI",
-
 document.getElementById(
 "upi"
 ).value.trim()
@@ -1821,22 +2212,25 @@ document.getElementById(
 }
 
 
-
 /* =========================
-SECURITY DISPLAY HELPER
+ESCAPE
 ========================= */
 
 function escapeHTML(value){
 
-return String(value ?? "")
+return String(value??"")
+
 .replace(/&/g,"&amp;")
+
 .replace(/</g,"&lt;")
+
 .replace(/>/g,"&gt;")
+
 .replace(/"/g,"&quot;")
+
 .replace(/'/g,"&#039;");
 
 }
-
 
 
 /* =========================
@@ -1856,13 +2250,11 @@ loadSettings();
 }
 
 
-
 /* =========================
 START
 ========================= */
 
 render();
-
 
 </script>
 
