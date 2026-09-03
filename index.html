@@ -1,31 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ZYVORA | Premium Fashion Store</title>
-
-<meta name="description" content="ZYVORA - Premium clothing, shoes and accessories. Discover modern fashion online.">
-<meta name="keywords" content="ZYVORA, fashion store, clothing, shoes, accessories">
-<meta name="robots" content="index, follow">
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial,sans-serif
 }
-
-html{scroll-behavior:smooth}
 
 body{
   background:#f7f7f7;
-  color:#111;
+  color:#111
 }
-
-button,input,textarea,select{font-family:inherit}
 
 header{
   position:sticky;
@@ -33,516 +24,459 @@ header{
   z-index:1000;
   background:#fff;
   border-bottom:1px solid #eee;
-  padding:14px 5%;
+  padding:13px 5%;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:15px;
+  justify-content:space-between
 }
 
 .logo{
-  font-size:27px;
+  font-size:26px;
   font-weight:900;
-  letter-spacing:5px;
+  letter-spacing:5px
 }
 
 nav{
   display:flex;
-  gap:25px;
+  gap:22px
 }
 
 nav a{
   text-decoration:none;
   color:#111;
-  font-weight:600;
+  font-weight:bold
 }
 
 .actions{
   display:flex;
-  gap:8px;
+  gap:7px
 }
 
 .actions button{
-  border:0;
   background:#111;
   color:#fff;
-  padding:10px 14px;
+  border:0;
   border-radius:22px;
-  cursor:pointer;
+  padding:10px 14px;
+  cursor:pointer
 }
 
 .hero{
-  min-height:620px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  min-height:530px;
+  display:grid;
+  place-items:center;
   text-align:center;
   color:#fff;
   padding:30px;
   background:
-    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
-    linear-gradient(135deg,#111,#777);
+    linear-gradient(#000a,#000a),
+    linear-gradient(135deg,#111,#777)
 }
 
-.hero-content{max-width:800px}
-
 .hero small{
-  letter-spacing:5px;
-  font-weight:bold;
+  letter-spacing:5px
 }
 
 .hero h1{
-  font-size:70px;
+  font-size:68px;
   letter-spacing:12px;
-  margin:18px 0;
+  margin:18px
 }
 
 .hero p{
-  font-size:19px;
+  max-width:700px;
   line-height:1.7;
-  color:#eee;
+  color:#eee
 }
 
 .hero-btn{
   display:inline-block;
-  margin-top:28px;
-  padding:15px 34px;
-  border-radius:30px;
+  margin-top:25px;
   background:#fff;
   color:#111;
   text-decoration:none;
   font-weight:bold;
+  padding:14px 30px;
+  border-radius:22px
 }
 
 .search-area{
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
-  padding:35px 5% 10px;
+  padding:28px 5% 10px
 }
 
 .search{
   width:100%;
-  padding:16px 22px;
+  padding:15px 20px;
   border:1px solid #ddd;
   border-radius:30px;
-  font-size:16px;
-  outline:none;
+  font-size:16px
 }
 
 .categories{
   display:flex;
   justify-content:center;
-  gap:10px;
+  gap:8px;
   flex-wrap:wrap;
-  padding:20px 5%;
+  padding:18px 5%
 }
 
 .category{
-  border:1px solid #ddd;
   background:#fff;
-  padding:11px 20px;
-  border-radius:25px;
-  cursor:pointer;
-  font-weight:600;
+  border:1px solid #ddd;
+  border-radius:22px;
+  padding:10px 16px;
+  font-weight:bold;
+  cursor:pointer
 }
 
 .category.active{
   background:#111;
-  color:#fff;
+  color:#fff
 }
 
-section{padding:55px 5%}
+section{
+  padding:45px 5%
+}
 
 .section-title{
   text-align:center;
-  margin-bottom:35px;
+  margin-bottom:28px
 }
 
-.section-title h2{font-size:40px}
+.section-title h2{
+  font-size:38px
+}
 
 .section-title p{
   color:#777;
-  margin-top:8px;
+  margin-top:7px
 }
 
 .products{
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px
 }
 
 .product{
   background:#fff;
-  border-radius:20px;
+  border-radius:15px;
   overflow:hidden;
-  position:relative;
-  box-shadow:0 8px 28px rgba(0,0,0,.08);
-  transition:.3s;
-}
-
-.product:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 35px rgba(0,0,0,.14);
+  box-shadow:0 5px 18px #00000012;
+  position:relative
 }
 
 .product-img{
-  height:300px;
+  height:270px;
   background:#eee;
-  overflow:hidden;
   cursor:pointer;
+  overflow:hidden
 }
 
 .product-img img{
   width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
-  transition:.4s;
+  transition:.3s
 }
 
-.product:hover .product-img img{
-  transform:scale(1.06);
+.product:hover img{
+  transform:scale(1.04)
 }
 
-.wishlist-btn{
+.wish{
   position:absolute;
-  right:14px;
-  top:14px;
-  width:44px;
-  height:44px;
+  right:9px;
+  top:9px;
   border:0;
   border-radius:50%;
   background:#fff;
-  font-size:23px;
-  cursor:pointer;
-  box-shadow:0 4px 15px rgba(0,0,0,.15);
+  width:38px;
+  height:38px;
+  font-size:20px;
   z-index:2;
+  cursor:pointer
 }
 
-.info{padding:18px}
+.info{
+  padding:13px
+}
 
 .info h3{
-  font-size:19px;
-  margin-bottom:6px;
+  font-size:16px
 }
 
 .info p{
+  font-size:12px;
   color:#777;
-  font-size:14px;
+  margin-top:4px
 }
 
 .price{
-  font-size:21px;
+  font-size:19px;
   font-weight:800;
-  margin:12px 0;
+  margin:9px 0
 }
 
-.old-price{
-  font-size:14px;
-  color:#999;
+.old{
   text-decoration:line-through;
-  margin-right:6px;
+  color:#999;
+  font-size:13px;
+  margin-right:4px
 }
 
-.discount{
-  display:inline-block;
-  font-size:12px;
-  font-weight:bold;
+.disc{
+  font-size:10px;
   background:#111;
   color:#fff;
-  padding:4px 7px;
-  border-radius:5px;
+  padding:3px 5px;
+  border-radius:4px
 }
 
 .stock{
-  font-size:13px;
+  font-size:12px;
   font-weight:bold;
-  margin:8px 0;
+  margin:6px 0
 }
 
-.in-stock{color:#168a32}
-.low-stock{color:#d27a00}
-.out-stock{color:#c00}
+.in{
+  color:#168a32
+}
 
-.info select,
-.detail-info select{
+.low{
+  color:#c77800
+}
+
+.out{
+  color:#c00
+}
+
+.info select{
+  width:100%;
+  padding:9px;
+  border:1px solid #ddd;
+  border-radius:8px
+}
+
+.add,
+.buy,
+.checkout,
+.whatsapp,
+.upi{
   width:100%;
   padding:11px;
-  border:1px solid #ddd;
-  border-radius:9px;
-  margin-bottom:10px;
-  background:#fff;
-}
-
-.add,.buy{
-  width:100%;
-  padding:13px;
   border:0;
-  border-radius:10px;
+  border-radius:9px;
   color:#fff;
   font-weight:bold;
-  cursor:pointer;
   margin-top:6px;
+  cursor:pointer
 }
 
-.add{background:#111}
-.buy{background:#555}
+.add,
+.checkout,
+.upi{
+  background:#111
+}
 
-.add:disabled,.buy:disabled{
-  background:#aaa;
-  cursor:not-allowed;
+.buy,
+.whatsapp{
+  background:#111
+}
+
+.add:disabled,
+.buy:disabled{
+  background:#aaa
 }
 
 .about{
   background:#111;
   color:#fff;
-  text-align:center;
+  text-align:center
 }
 
 .about p{
-  max-width:750px;
+  max-width:760px;
   margin:auto;
   color:#ccc;
-  line-height:1.8;
+  line-height:1.8
 }
 
 footer{
   background:#000;
   color:#fff;
   text-align:center;
-  padding:35px 20px;
+  padding:30px
 }
 
 footer p{
   color:#aaa;
-  margin-top:8px;
+  margin-top:7px
 }
 
 .modal{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.72);
-  z-index:3000;
-  padding:20px;
-  overflow:auto;
+  background:#000b;
+  z-index:2000;
+  padding:18px;
+  overflow:auto
 }
 
-.modal.show{display:block}
+.modal.show{
+  display:block
+}
 
 .modal-box{
   background:#fff;
   max-width:680px;
-  margin:40px auto;
-  padding:25px;
-  border-radius:20px;
-  position:relative;
+  margin:25px auto;
+  padding:24px;
+  border-radius:18px;
+  position:relative
 }
 
 .close{
   position:absolute;
-  right:15px;
-  top:12px;
-  border:0;
+  right:12px;
+  top:10px;
   background:#111;
   color:#fff;
-  width:38px;
-  height:38px;
+  border:0;
   border-radius:50%;
-  font-size:22px;
-  cursor:pointer;
+  width:36px;
+  height:36px;
+  font-size:20px;
+  cursor:pointer
 }
 
 .cart-item{
-  padding:15px 0;
-  border-bottom:1px solid #eee;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  gap:15px;
-}
-
-.qty{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:8px;
+  gap:12px;
+  padding:13px 0;
+  border-bottom:1px solid #eee
 }
 
 .qty button{
-  width:30px;
-  height:30px;
+  width:28px;
+  height:28px;
   border:1px solid #ddd;
   background:#fff;
-  border-radius:7px;
-  cursor:pointer;
-  font-weight:bold;
+  cursor:pointer
 }
 
 .remove{
   background:#e53935;
   color:#fff;
   border:0;
-  padding:8px 11px;
-  border-radius:7px;
-  cursor:pointer;
+  padding:7px;
+  border-radius:6px;
+  cursor:pointer
 }
 
-.total{
-  font-size:24px;
-  font-weight:bold;
-  margin:20px 0;
-}
-
-.checkout{
-  width:100%;
-  padding:15px;
-  background:#111;
-  color:#fff;
-  border:0;
-  border-radius:10px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.detail-layout{
+.detail{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
+  gap:20px
 }
 
-.detail-image{
+.detail img{
   width:100%;
-  height:430px;
+  height:420px;
   object-fit:cover;
-  border-radius:15px;
+  border-radius:12px
 }
 
-.detail-info{padding:10px}
-
-.detail-info h2{
-  font-size:32px;
-  margin-bottom:10px;
+.detail h2{
+  font-size:30px;
+  margin:8px 0
 }
 
-.detail-price{
-  font-size:28px;
-  font-weight:bold;
-  margin:15px 0;
-}
-
-.detail-description{
+.desc{
   color:#666;
   line-height:1.7;
-  margin-bottom:20px;
+  margin:15px 0
 }
 
-.checkout-form h3{
-  margin:18px 0 10px;
-}
-
-.checkout-form input,
-.checkout-form textarea{
+.form input,
+.form textarea{
   width:100%;
   padding:12px;
   border:1px solid #ddd;
-  border-radius:9px;
-  margin-bottom:10px;
-  outline:none;
+  border-radius:8px;
+  margin:5px 0
 }
 
-.payment-box{
-  margin-top:15px;
-  padding:15px;
-  border:1px solid #ddd;
-  border-radius:12px;
-}
-
-.payment-box label{
-  display:block;
-  margin:10px 0;
-  cursor:pointer;
-}
-
-.upi-btn,.whatsapp-btn{
-  width:100%;
-  padding:14px;
-  border:0;
-  border-radius:10px;
-  color:#fff;
+.total{
+  font-size:23px;
   font-weight:bold;
-  cursor:pointer;
-  margin-top:8px;
+  margin:16px 0
 }
 
-.upi-btn{background:#111}
-.whatsapp-btn{background:#222}
+@media(max-width:900px){
 
-.confirm{
-  text-align:center;
-  padding:25px;
+.products{
+  grid-template-columns:repeat(3,1fr)
 }
 
-.confirm-icon{
-  font-size:55px;
-  margin-bottom:15px;
 }
 
-.order-id{
-  background:#f2f2f2;
-  padding:14px;
-  border-radius:10px;
-  margin:15px 0;
-  font-weight:bold;
+@media(max-width:650px){
+
+nav{
+  display:none
 }
 
-@media(max-width:700px){
+.hero h1{
+  font-size:43px;
+  letter-spacing:6px
+}
 
-  nav{display:none}
+.products{
+  grid-template-columns:repeat(2,1fr);
+  gap:9px
+}
 
-  .logo{
-    font-size:22px;
-  }
+.product-img{
+  height:215px
+}
 
-  .hero{
-    min-height:550px;
-  }
+.info{
+  padding:10px
+}
 
-  .hero h1{
-    font-size:43px;
-    letter-spacing:6px;
-  }
+.info h3{
+  font-size:14px
+}
 
-  .hero p{
-    font-size:16px;
-  }
+.price{
+  font-size:16px
+}
 
-  section{
-    padding:40px 18px;
-  }
+.add,
+.buy{
+  font-size:11px;
+  padding:9px
+}
 
-  .section-title h2{
-    font-size:32px;
-  }
+.detail{
+  grid-template-columns:1fr
+}
 
-  .detail-layout{
-    grid-template-columns:1fr;
-  }
+.detail img{
+  height:330px
+}
 
-  .detail-image{
-    height:350px;
-  }
+.section-title h2{
+  font-size:30px
+}
 
-  header{
-    padding:12px 4%;
-  }
-
-  .actions button{
-    padding:8px 10px;
-  }
 }
 </style>
 </head>
@@ -551,7 +485,9 @@ footer p{
 
 <header>
 
-<div class="logo">ZYVORA</div>
+<div class="logo">
+ZYVORA
+</div>
 
 <nav>
 <a href="#home">Home</a>
@@ -570,11 +506,12 @@ footer p{
 </button>
 
 </div>
+
 </header>
 
 <section class="hero" id="home">
 
-<div class="hero-content">
+<div>
 
 <small>NEW COLLECTION</small>
 
@@ -585,11 +522,12 @@ Modern fashion designed for your everyday style.
 Discover clothing, shoes and accessories for a confident look.
 </p>
 
-<a href="#shop" class="hero-btn">
+<a class="hero-btn" href="#shop">
 SHOP NOW
 </a>
 
 </div>
+
 </section>
 
 <div class="search-area">
@@ -597,36 +535,40 @@ SHOP NOW
 <input
 id="search"
 class="search"
-type="text"
-placeholder="Search products..."
-oninput="displayProducts()">
+placeholder="🔍 Search products..."
+oninput="render()">
 
 </div>
 
 <div class="categories">
 
-<button class="category active"
-onclick="filterCategory('All',this)">
+<button
+class="category active"
+onclick="filter('All',this)">
 All
 </button>
 
-<button class="category"
-onclick="filterCategory('Men',this)">
+<button
+class="category"
+onclick="filter('Men',this)">
 Men
 </button>
 
-<button class="category"
-onclick="filterCategory('Women',this)">
+<button
+class="category"
+onclick="filter('Women',this)">
 Women
 </button>
 
-<button class="category"
-onclick="filterCategory('Shoes',this)">
+<button
+class="category"
+onclick="filter('Shoes',this)">
 Shoes
 </button>
 
-<button class="category"
-onclick="filterCategory('Accessories',this)">
+<button
+class="category"
+onclick="filter('Accessories',this)">
 Accessories
 </button>
 
@@ -636,23 +578,34 @@ Accessories
 
 <div class="section-title">
 
-<h2>Featured Collection</h2>
+<h2>
+Featured Collection
+</h2>
 
-<p>Explore our latest fashion collection</p>
+<p>
+Clothing • Shoes • Accessories
+</p>
 
 </div>
 
-<div class="products" id="products"></div>
+<div
+id="products"
+class="products">
+</div>
 
 </section>
 
-<section class="about" id="about">
+<section
+id="about"
+class="about">
 
 <div class="section-title">
 
-<h2>About Zyvora</h2>
+<h2>
+About Zyvora
+</h2>
 
-<p style="color:#aaa;">
+<p style="color:#aaa">
 Style • Simplicity • Confidence
 </p>
 
@@ -668,175 +621,193 @@ experience across mobile and desktop devices.
 
 <footer>
 
-<h2>ZYVORA</h2>
+<h2>
+ZYVORA
+</h2>
 
-<p>Modern Fashion Store</p>
+<p>
+Modern Fashion Store
+</p>
 
-<p>WhatsApp: +91 6283618166</p>
+<p>
+WhatsApp: +91 6283618166
+</p>
 
-<p>© 2026 Zyvora. All Rights Reserved.</p>
+<p>
+© 2026 Zyvora. All Rights Reserved.
+</p>
 
 </footer>
 
+
 <!-- CART -->
 
-<div class="modal" id="cartModal">
+<div
+id="cartModal"
+class="modal">
 
 <div class="modal-box">
 
-<button class="close"
-onclick="closeModal('cartModal')">×</button>
+<button
+class="close"
+onclick="closeM('cartModal')">
+×
+</button>
 
-<h2>🛒 Your Cart</h2>
+<h2>
+🛒 Your Cart
+</h2>
 
-<div id="cartItems"></div>
+<div id="cartItems">
+</div>
 
 <div class="total">
 Total: ₹<span id="cartTotal">0</span>
 </div>
 
-<button class="checkout"
-onclick="openCheckout()">
+<button
+class="checkout"
+onclick="checkout()">
 PROCEED TO CHECKOUT
 </button>
 
 </div>
+
 </div>
+
 
 <!-- WISHLIST -->
 
-<div class="modal" id="wishlistModal">
+<div
+id="wishModal"
+class="modal">
 
 <div class="modal-box">
 
-<button class="close"
-onclick="closeModal('wishlistModal')">×</button>
+<button
+class="close"
+onclick="closeM('wishModal')">
+×
+</button>
 
-<h2>❤️ Wishlist</h2>
+<h2>
+❤️ Wishlist
+</h2>
 
-<div id="wishlistItems"></div>
+<div id="wishItems">
+</div>
 
 </div>
+
 </div>
+
 
 <!-- DETAILS -->
 
-<div class="modal" id="detailsModal">
+<div
+id="detailModal"
+class="modal">
 
 <div class="modal-box">
 
-<button class="close"
-onclick="closeModal('detailsModal')">×</button>
+<button
+class="close"
+onclick="closeM('detailModal')">
+×
+</button>
 
-<div id="detailsContent"></div>
+<div id="detailBox">
+</div>
 
 </div>
+
 </div>
+
 
 <!-- CHECKOUT -->
 
-<div class="modal" id="checkoutModal">
+<div
+id="checkoutModal"
+class="modal">
 
 <div class="modal-box">
 
-<button class="close"
-onclick="closeModal('checkoutModal')">×</button>
-
-<h2>🧾 Checkout</h2>
-
-<div class="checkout-form">
-
-<h3>Customer Details</h3>
-
-<input id="customerName"
-type="text"
-placeholder="Full Name">
-
-<input id="customerPhone"
-type="tel"
-placeholder="Mobile Number">
-
-<textarea id="customerAddress"
-rows="4"
-placeholder="Full Address"></textarea>
-
-<h3>Payment Method</h3>
-
-<div class="payment-box">
-
-<label>
-<input
-type="radio"
-name="payment"
-value="UPI"
-checked>
-UPI Payment
-</label>
-
-<label>
-<input
-type="radio"
-name="payment"
-value="COD">
-Cash on Delivery
-</label>
-
-</div>
-
-<div class="total">
-Order Total: ₹<span id="checkoutTotal">0</span>
-</div>
-
-<button class="upi-btn"
-onclick="payWithUPI()">
-💳 PAY WITH UPI
+<button
+class="close"
+onclick="closeM('checkoutModal')">
+×
 </button>
 
-<button class="whatsapp-btn"
-onclick="sendWhatsAppOrder()">
+<h2>
+🧾 Checkout
+</h2>
+
+<div class="form">
+
+<input
+id="name"
+placeholder="Full Name">
+
+<input
+id="phone"
+placeholder="Mobile Number">
+
+<textarea
+id="address"
+rows="4"
+placeholder="Full Address">
+</textarea>
+
+</div>
+
+<h3>
+Payment Method
+</h3>
+
+<p>
+<label>
+<input
+type="radio"
+name="pay"
+value="COD"
+checked>
+Cash on Delivery
+</label>
+</p>
+
+<p>
+<label>
+<input
+type="radio"
+name="pay"
+value="UPI">
+UPI Payment
+</label>
+</p>
+
+<div class="total">
+
+Order Total:
+₹<span id="checkoutTotal">0</span>
+
+</div>
+
+<button
+class="whatsapp"
+onclick="placeOrder()">
 📱 ORDER ON WHATSAPP
 </button>
 
-</div>
-</div>
-</div>
-
-<!-- CONFIRMATION -->
-
-<div class="modal" id="confirmationModal">
-
-<div class="modal-box">
-
-<button class="close"
-onclick="closeModal('confirmationModal')">×</button>
-
-<div class="confirm">
-
-<div class="confirm-icon">✅</div>
-
-<h2>Order Created!</h2>
-
-<p style="margin-top:10px;">
-Thank you for shopping with Zyvora.
-</p>
-
-<div class="order-id">
-Order ID:
-<span id="orderId"></span>
-</div>
-
-<p>
-Your order details are ready to send on WhatsApp.
-</p>
-
-<button class="whatsapp-btn"
-onclick="sendLastOrderWhatsApp()">
-📱 SEND ORDER ON WHATSAPP
+<button
+class="upi"
+onclick="payUPI()">
+💳 PAY WITH UPI
 </button>
 
 </div>
+
 </div>
-</div>
+
 
 <script>
 
@@ -844,29 +815,54 @@ onclick="sendLastOrderWhatsApp()">
 STORE SETTINGS
 ========================= */
 
-const WHATSAPP_NUMBER="916283618166";
-const UPI_ID="6283618166@fam";
-const STORE_NAME="Zyvora";
+const WA="916283618166";
+
+const UPI="6283618166@fam";
+
 
 /* =========================
-DEFAULT PRODUCTS
-IMPORTANT:
-JACKET PRICE = ₹4999
+DATA
 ========================= */
 
-const defaultProducts=[
+let cat="All";
+
+let cart=JSON.parse(
+localStorage.getItem("zyvoraCart")||"[]"
+);
+
+let wish=JSON.parse(
+localStorage.getItem("zyvoraWishlist")||"[]"
+);
+
+let selected=null;
+
+let last=null;
+
+
+/* =========================
+IMAGE
+========================= */
+
+const img=(q)=>
+"https://images.unsplash.com/"+
+q+
+"?auto=format&fit=crop&w=800&q=80";
+
+
+/* =========================
+30 PRODUCTS
+========================= */
+
+const products=[
 
 {
 id:1,
 name:"Premium Black Jacket",
 price:4999,
 category:"Men",
-image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80",
-discount:0,
-stock:20,
+image:"photo-1551028719-00167b16eac5",
 color:"Black",
-sizes:"M,L,XL,XXL",
-description:"Premium modern black jacket designed for a clean and confident everyday look."
+sizes:"M,L,XL,XXL"
 },
 
 {
@@ -874,491 +870,529 @@ id:2,
 name:"Classic White T-Shirt",
 price:999,
 category:"Men",
-image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
-discount:0,
-stock:20,
+image:"photo-1521572163474-6864f9cf17ab",
 color:"White",
-sizes:"M,L,XL,XXL",
-description:"Clean classic white T-shirt with a comfortable everyday fashion style."
+sizes:"S,M,L,XL"
 },
 
 {
 id:3,
-name:"Modern Women's Outfit",
-price:2499,
-category:"Women",
-image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
-discount:0,
-stock:20,
+name:"Black Oversized T-Shirt",
+price:1299,
+category:"Men",
+image:"photo-1503341504253-dff4815485f1",
 color:"Black",
-sizes:"M,L,XL",
-description:"Modern fashion outfit created for a stylish contemporary look."
+sizes:"M,L,XL,XXL"
 },
 
 {
 id:4,
-name:"Street Sneakers",
-price:2999,
-category:"Shoes",
-image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
-discount:0,
-stock:20,
-color:"Red",
-sizes:"M,L,XL",
-description:"Modern street-style sneakers suitable for everyday outfits."
+name:"Blue Casual Jeans",
+price:2499,
+category:"Men",
+image:"photo-1542272604-787c3835535d",
+color:"Blue",
+sizes:"30,32,34,36"
 },
 
 {
 id:5,
-name:"Premium Fashion Cap",
-price:699,
-category:"Accessories",
-image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=80",
-discount:0,
-stock:20,
+name:"Men Black Sneakers",
+price:2999,
+category:"Shoes",
+image:"photo-1542291026-7eec264c27ff",
 color:"Black",
-sizes:"Free Size",
-description:"Simple premium cap to complete your everyday fashion look."
+sizes:"7,8,9,10,11"
 },
 
 {
 id:6,
-name:"Classic Fashion Jeans",
-price:2499,
+name:"Men Sunglasses",
+price:1199,
+category:"Accessories",
+image:"photo-1511499767150-a48a237f0083",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:7,
+name:"Men Black Belt",
+price:899,
+category:"Accessories",
+image:"photo-1624222247344-550fb60583dc",
+color:"Black",
+sizes:"30,32,34,36,38"
+},
+
+{
+id:8,
+name:"Men Brown Belt",
+price:899,
+category:"Accessories",
+image:"photo-1553062407-98eeb64c6a62",
+color:"Brown",
+sizes:"30,32,34,36,38"
+},
+
+{
+id:9,
+name:"Men Cotton Socks",
+price:499,
+category:"Accessories",
+image:"photo-1586350977771-b3b0abd50c82",
+color:"Mixed",
+sizes:"Free Size"
+},
+
+{
+id:10,
+name:"Men Classic Cap",
+price:699,
+category:"Accessories",
+image:"photo-1521369909029-2afed882baee",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:11,
+name:"Women Black Dress",
+price:2999,
 category:"Women",
-image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80",
-discount:0,
-stock:20,
+image:"photo-1539008835657-9e8e9680c956",
+color:"Black",
+sizes:"S,M,L,XL"
+},
+
+{
+id:12,
+name:"Women White Top",
+price:1499,
+category:"Women",
+image:"photo-1551488831-00ddcb6c6bd3",
+color:"White",
+sizes:"S,M,L,XL"
+},
+
+{
+id:13,
+name:"Women Blue Jeans",
+price:2399,
+category:"Women",
+image:"photo-1541099649105-f69ad21f3246",
 color:"Blue",
-sizes:"S,M,L,XL",
-description:"Classic fashion jeans designed for a modern casual wardrobe."
+sizes:"26,28,30,32"
+},
+
+{
+id:14,
+name:"Women Handbag",
+price:2499,
+category:"Accessories",
+image:"photo-1584917865442-de89df76afd3",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:15,
+name:"Women Sunglasses",
+price:1299,
+category:"Accessories",
+image:"photo-1572635196237-14b3f281503f",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:16,
+name:"Women Black Heels",
+price:2799,
+category:"Shoes",
+image:"photo-1543163521-1bf539c55dd2",
+color:"Black",
+sizes:"5,6,7,8"
+},
+
+{
+id:17,
+name:"Women White Sneakers",
+price:2599,
+category:"Shoes",
+image:"photo-1549298916-b41d501d3772",
+color:"White",
+sizes:"5,6,7,8"
+},
+
+{
+id:18,
+name:"Women Fashion Belt",
+price:799,
+category:"Accessories",
+image:"photo-1594223274512-ad4803739b7c",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:19,
+name:"Women Socks Pack",
+price:449,
+category:"Accessories",
+image:"photo-1582966772680-860e372bb558",
+color:"Mixed",
+sizes:"Free Size"
+},
+
+{
+id:20,
+name:"Women Casual Jacket",
+price:2699,
+category:"Women",
+image:"photo-1548883354-7622d03aca27",
+color:"Black",
+sizes:"S,M,L,XL"
+},
+
+{
+id:21,
+name:"Premium Black Wallet",
+price:999,
+category:"Accessories",
+image:"photo-1627123424574-724758594e93",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:22,
+name:"Fashion Watch",
+price:1999,
+category:"Accessories",
+image:"photo-1524805444758-089113d48a6d",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:23,
+name:"Classic Brown Loafers",
+price:2899,
+category:"Shoes",
+image:"photo-1533867617858-e7b97e060509",
+color:"Brown",
+sizes:"7,8,9,10,11"
+},
+
+{
+id:24,
+name:"Women Beige Flats",
+price:1799,
+category:"Shoes",
+image:"photo-1560343090-f0409e92791a",
+color:"Beige",
+sizes:"5,6,7,8"
+},
+
+{
+id:25,
+name:"Men Polo Shirt",
+price:1599,
+category:"Men",
+image:"photo-1625910513413-5fc45c1e5c6b",
+color:"Black",
+sizes:"M,L,XL,XXL"
+},
+
+{
+id:26,
+name:"Women Premium Top",
+price:1699,
+category:"Women",
+image:"photo-1564257577054-2e1d3cf2d0d1",
+color:"Cream",
+sizes:"S,M,L,XL"
+},
+
+{
+id:27,
+name:"Black Crossbody Bag",
+price:2199,
+category:"Accessories",
+image:"photo-1590874103328-eac38a683ce7",
+color:"Black",
+sizes:"Free Size"
+},
+
+{
+id:28,
+name:"Sports Sneakers",
+price:3299,
+category:"Shoes",
+image:"photo-1552346154-21d32810aba3",
+color:"White",
+sizes:"7,8,9,10,11"
+},
+
+{
+id:29,
+name:"Premium Denim Jacket",
+price:3199,
+category:"Men",
+image:"photo-1495105787522-5334e3ffa0ef",
+color:"Blue",
+sizes:"M,L,XL,XXL"
+},
+
+{
+id:30,
+name:"Women Evening Heels",
+price:3299,
+category:"Shoes",
+image:"photo-1595950653106-6c9ebd614d3a",
+color:"Black",
+sizes:"5,6,7,8"
 }
 
 ];
 
+
 /* =========================
-LOAD PRODUCTS
-This keeps ALL products.
+ADD DEFAULT DATA
 ========================= */
 
-function loadProducts(){
+products.forEach((p,i)=>{
 
-let saved=localStorage.getItem("zyvoraProducts");
+p.image=img(p.image);
 
-if(!saved){
+p.stock=20;
 
-localStorage.setItem(
-"zyvoraProducts",
-JSON.stringify(defaultProducts)
-);
+p.discount=i%4===0?10:0;
 
-return JSON.parse(
-JSON.stringify(defaultProducts)
-);
-
-}
-
-try{
-
-let savedProducts=JSON.parse(saved);
-
-if(!Array.isArray(savedProducts) ||
-savedProducts.length===0){
-
-localStorage.setItem(
-"zyvoraProducts",
-JSON.stringify(defaultProducts)
-);
-
-return JSON.parse(
-JSON.stringify(defaultProducts)
-);
-
-}
-
-/*
-Restore any missing default products.
-This prevents products disappearing.
-*/
-
-defaultProducts.forEach(defaultProduct=>{
-
-const exists=savedProducts.find(
-p=>Number(p.id)===Number(defaultProduct.id)
-);
-
-if(!exists){
-
-savedProducts.push(
-JSON.parse(JSON.stringify(defaultProduct))
-);
-
-}
+p.desc=
+"Premium "+
+p.name+
+" designed for a modern and confident fashion look.";
 
 });
 
-/*
-If jacket was never manually changed,
-keep it at ₹4999.
-*/
-
-const jacket=savedProducts.find(
-p=>Number(p.id)===1
-);
-
-if(jacket &&
-(!jacket.price ||
-Number(jacket.price)===3999)){
-
-jacket.price=4999;
-
-}
-
-localStorage.setItem(
-"zyvoraProducts",
-JSON.stringify(savedProducts)
-);
-
-return savedProducts;
-
-}catch(error){
-
-localStorage.setItem(
-"zyvoraProducts",
-JSON.stringify(defaultProducts)
-);
-
-return JSON.parse(
-JSON.stringify(defaultProducts)
-);
-
-}
-
-}
-
-let products=loadProducts();
 
 /* =========================
-OTHER DATA
+ESCAPE HTML
 ========================= */
 
-let cart=JSON.parse(
-localStorage.getItem("zyvoraCart")||"[]"
-);
+function esc(v){
 
-let wishlist=JSON.parse(
-localStorage.getItem("zyvoraWishlist")||"[]"
-);
+return String(v??"")
+.replace(/[&<>"']/g,m=>({
 
-let currentCategory="All";
-let selectedProduct=null;
-let lastOrder=null;
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
 
-/* =========================
-ESCAPE
-========================= */
-
-function escapeHTML(value){
-
-return String(value??"")
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+}[m]));
 
 }
 
-/* =========================
-REFRESH
-========================= */
-
-function refreshProducts(){
-products=loadProducts();
-}
 
 /* =========================
 FINAL PRICE
 ========================= */
 
-function getFinalPrice(product){
-
-const price=Number(product.price||0);
-const discount=Number(product.discount||0);
+function price(p){
 
 return Math.round(
-price*(1-discount/100)
+p.price*
+(1-p.discount/100)
 );
 
 }
 
+
 /* =========================
-DISPLAY PRODUCTS
+FILTER
 ========================= */
 
-function displayProducts(){
+function filter(c,b){
 
-refreshProducts();
+cat=c;
 
-const container=document.getElementById("products");
+document
+.querySelectorAll(".category")
+.forEach(x=>
+x.classList.remove("active")
+);
 
-const search=document.getElementById("search")
+b.classList.add("active");
+
+render();
+
+}
+
+
+/* =========================
+RENDER
+========================= */
+
+function render(){
+
+const search=
+document
+.getElementById("search")
 .value
 .toLowerCase()
 .trim();
 
-container.innerHTML="";
-
-const filtered=products.filter(product=>{
-
-const categoryMatch=
-currentCategory==="All" ||
-product.category===currentCategory;
-
-const searchMatch=
-(product.name||"")
-.toLowerCase()
-.includes(search);
-
-return categoryMatch && searchMatch;
-
-});
-
-if(filtered.length===0){
-
-container.innerHTML=`
-<p style="
-grid-column:1/-1;
-text-align:center;
-padding:40px;
-color:#777;">
-No products found.
-</p>`;
-
-updateCounts();
-return;
-
-}
-
-filtered.forEach(product=>{
-
-const index=products.findIndex(
-p=>Number(p.id)===Number(product.id)
+const list=
+products.filter(p=>
+(cat==="All"||p.category===cat)
+&&
+(
+p.name.toLowerCase().includes(search)
+||
+p.color.toLowerCase().includes(search)
+)
 );
 
+document.getElementById("products")
+.innerHTML=
+list.map(p=>{
+
 const liked=
-wishlist.includes(product.id) ||
-wishlist.includes(String(product.id)) ||
-wishlist.includes(product.name);
+wish.includes(p.id);
 
-const stock=Number(product.stock??0);
-const discount=Number(product.discount??0);
-const originalPrice=Number(product.price??0);
-const finalPrice=getFinalPrice(product);
-
-let stockText="";
-let stockClass="";
-
-if(stock<=0){
-
-stockText="Out of Stock";
-stockClass="out-stock";
-
-}else if(stock<=3){
-
-stockText="Only "+stock+" left";
-stockClass="low-stock";
-
-}else{
-
-stockText="In Stock";
-stockClass="in-stock";
-
-}
-
-let sizeOptions=
-(product.sizes||"M,L,XL,XXL")
+const options=
+p.sizes
 .split(",")
-.map(s=>s.trim())
-.filter(Boolean);
+.map(s=>
+`<option>${esc(s)}</option>`
+)
+.join("");
 
-const sizeHTML=sizeOptions.map(size=>`
-<option value="${escapeHTML(size)}">
-Size ${escapeHTML(size)}
-</option>
-`).join("");
-
-container.innerHTML+=`
+return `
 
 <div class="product">
 
 <button
-class="wishlist-btn"
-onclick="toggleWishlist(${index})">
+class="wish"
+onclick="toggleWish(${p.id})">
+
 ${liked?"❤️":"♡"}
+
 </button>
 
 <div
 class="product-img"
-onclick="openDetails(${index})">
+onclick="details(${p.id})">
 
 <img
-src="${escapeHTML(product.image||"")}"
-alt="${escapeHTML(product.name||"ZYVORA Product")}"
-loading="lazy"
-onerror="this.style.display='none'">
+src="${p.image}"
+alt="${esc(p.name)}"
+loading="lazy">
 
 </div>
 
 <div class="info">
 
 <h3>
-${escapeHTML(product.name||"Product")}
+${esc(p.name)}
 </h3>
 
 <p>
-${escapeHTML(product.category||"")}
+${esc(p.category)}
+•
+${esc(p.color)}
 </p>
 
-<div class="stock ${stockClass}">
-${stockText}
+<div class="stock in">
+In Stock
 </div>
 
 <div class="price">
 
 ${
-discount>0
+p.discount
 ?
 `
-<span class="old-price">
-₹${originalPrice.toLocaleString("en-IN")}
-</span>
-
-₹${finalPrice.toLocaleString("en-IN")}
-
-<span class="discount">
--${discount}%
+<span class="old">
+₹${p.price.toLocaleString("en-IN")}
 </span>
 `
 :
+""
+}
+
+₹${price(p).toLocaleString("en-IN")}
+
+${
+p.discount
+?
 `
-₹${finalPrice.toLocaleString("en-IN")}
+<span class="disc">
+-${p.discount}%
+</span>
 `
+:
+""
 }
 
 </div>
 
-<select id="size${index}">
-${sizeHTML}
+<select id="sz${p.id}">
+${options}
 </select>
 
 <button
 class="add"
-onclick="addToCart(${index})"
-${stock<=0?"disabled":""}>
-${stock<=0?"OUT OF STOCK":"ADD TO CART"}
+onclick="add(${p.id})">
+
+ADD TO CART
+
 </button>
 
 <button
 class="buy"
-onclick="buyNow(${index})"
-${stock<=0?"disabled":""}>
-${stock<=0?"OUT OF STOCK":"BUY NOW"}
+onclick="buy(${p.id})">
+
+BUY NOW
+
 </button>
 
 </div>
+
 </div>
+
 `;
 
-});
+}).join("");
 
-updateCounts();
+counts();
 
 }
+
 
 /* =========================
-CATEGORY
+COUNTS
 ========================= */
 
-function filterCategory(category,button){
+function counts(){
 
-currentCategory=category;
-
-document
-.querySelectorAll(".category")
-.forEach(btn=>
-btn.classList.remove("active")
+document.getElementById("cartCount")
+.innerText=
+cart.reduce(
+(a,x)=>a+x.qty,
+0
 );
 
-button.classList.add("active");
-
-displayProducts();
-
-}
-
-/* =========================
-CART
-========================= */
-
-function addToCart(index){
-
-refreshProducts();
-
-const product=products[index];
-
-if(!product)return;
-
-const stock=Number(product.stock||0);
-
-if(stock<=0){
-
-alert("This product is out of stock.");
-return;
+document.getElementById("wishCount")
+.innerText=
+wish.length;
 
 }
 
-const sizeElement=
-document.getElementById("size"+index);
-
-const size=sizeElement?
-sizeElement.value:
-"M";
-
-const price=getFinalPrice(product);
-
-const existing=cart.find(item=>
-Number(item.id)===Number(product.id) &&
-item.size===size
-);
-
-if(existing){
-
-if(existing.quantity>=stock){
-
-alert("Maximum available stock reached.");
-return;
-
-}
-
-existing.quantity++;
-
-}else{
-
-cart.push({
-id:product.id,
-name:product.name,
-price:price,
-size:size,
-quantity:1
-});
-
-}
-
-saveCart();
-
-alert(product.name+" added to cart.");
-
-}
 
 /* =========================
 SAVE CART
@@ -1371,57 +1405,105 @@ localStorage.setItem(
 JSON.stringify(cart)
 );
 
-updateCounts();
+counts();
 
 }
+
+
+/* =========================
+ADD CART
+========================= */
+
+function add(id){
+
+const p=
+products[id-1];
+
+const size=
+document.getElementById(
+"sz"+id
+).value;
+
+const existing=
+cart.find(
+x=>x.id===id &&
+x.size===size
+);
+
+if(existing){
+
+existing.qty++;
+
+}else{
+
+cart.push({
+
+id:id,
+name:p.name,
+price:price(p),
+size:size,
+qty:1
+
+});
+
+}
+
+saveCart();
+
+alert(
+p.name+
+" added to cart."
+);
+
+}
+
+
+/* =========================
+BUY NOW
+========================= */
+
+function buy(id){
+
+const p=
+products[id-1];
+
+const size=
+document.getElementById(
+"sz"+id
+).value;
+
+cart=[{
+
+id:id,
+name:p.name,
+price:price(p),
+size:size,
+qty:1
+
+}];
+
+saveCart();
+
+checkout();
+
+}
+
 
 /* =========================
 TOTAL
 ========================= */
 
-function getTotal(){
+function total(){
 
 return cart.reduce(
-(total,item)=>
-total+
-Number(item.price||0)*
-Number(item.quantity||0),
+(a,x)=>
+a+
+x.price*x.qty,
 0
 );
 
 }
 
-/* =========================
-COUNTS
-========================= */
-
-function updateCounts(){
-
-const cartCount=
-document.getElementById("cartCount");
-
-const wishCount=
-document.getElementById("wishCount");
-
-if(cartCount){
-
-cartCount.innerText=
-cart.reduce(
-(total,item)=>
-total+Number(item.quantity||0),
-0
-);
-
-}
-
-if(wishCount){
-
-wishCount.innerText=
-wishlist.length;
-
-}
-
-}
 
 /* =========================
 OPEN CART
@@ -1429,72 +1511,49 @@ OPEN CART
 
 function openCart(){
 
-renderCart();
-
-document
-.getElementById("cartModal")
-.classList.add("show");
-
-}
-
-/* =========================
-RENDER CART
-========================= */
-
-function renderCart(){
-
 const box=
-document.getElementById("cartItems");
+document.getElementById(
+"cartItems"
+);
 
-if(cart.length===0){
+box.innerHTML=
+cart.length
+?
 
-box.innerHTML=`
-<p style="
-text-align:center;
-padding:30px;
-color:#777;">
-Your cart is empty.
-</p>`;
-
-}else{
-
-box.innerHTML="";
-
-cart.forEach((item,index)=>{
-
-box.innerHTML+=`
+cart.map((x,i)=>`
 
 <div class="cart-item">
 
 <div>
 
-<strong>
-${escapeHTML(item.name)}
-</strong>
+<b>
+${esc(x.name)}
+</b>
 
 <br>
 
 Size:
-${escapeHTML(item.size)}
+${esc(x.size)}
 
 <br>
 
-₹${Number(item.price)
-.toLocaleString("en-IN")}
+₹${x.price.toLocaleString("en-IN")}
+×
+${x.qty}
 
 <div class="qty">
 
 <button
-onclick="changeQuantity(${index},-1)">
+onclick="qty(${i},-1)">
 −
 </button>
 
 <span>
-${item.quantity}
+${x.qty}
 </span>
 
 <button
-onclick="changeQuantity(${index},1)">
+onclick="qty(${i},1)">
 +
 </button>
 
@@ -1504,197 +1563,299 @@ onclick="changeQuantity(${index},1)">
 
 <button
 class="remove"
-onclick="removeCart(${index})">
+onclick="remove(${i})">
+
 REMOVE
+
 </button>
 
 </div>
 
+`).join("")
+
+:
+
+`
+<p
+style="
+padding:30px;
+text-align:center;
+color:#777">
+
+Your cart is empty.
+
+</p>
 `;
 
-});
+document.getElementById(
+"cartTotal"
+).innerText=
+total().toLocaleString("en-IN");
+
+document
+.getElementById("cartModal")
+.classList.add("show");
 
 }
 
-document.getElementById("cartTotal")
-.innerText=
-getTotal().toLocaleString("en-IN");
-
-}
 
 /* =========================
 QUANTITY
 ========================= */
 
-function changeQuantity(index,change){
+function qty(i,c){
 
-if(!cart[index])return;
+cart[i].qty+=c;
 
-cart[index].quantity+=change;
+if(cart[i].qty<=0){
 
-if(cart[index].quantity<=0){
-
-cart.splice(index,1);
+cart.splice(i,1);
 
 }
 
 saveCart();
-renderCart();
+
+openCart();
 
 }
+
 
 /* =========================
-REMOVE CART
+REMOVE
 ========================= */
 
-function removeCart(index){
+function remove(i){
 
-cart.splice(index,1);
+cart.splice(i,1);
 
 saveCart();
-renderCart();
+
+openCart();
 
 }
+
+
+/* =========================
+WISHLIST
+========================= */
+
+function toggleWish(id){
+
+const i=
+wish.indexOf(id);
+
+if(i>=0){
+
+wish.splice(i,1);
+
+}else{
+
+wish.push(id);
+
+}
+
+localStorage.setItem(
+"zyvoraWishlist",
+JSON.stringify(wish)
+);
+
+render();
+
+}
+
+
+/* =========================
+OPEN WISHLIST
+========================= */
+
+function openWishlist(){
+
+const box=
+document.getElementById(
+"wishItems"
+);
+
+box.innerHTML=
+wish.length
+?
+
+wish.map(id=>{
+
+const p=
+products[id-1];
+
+return `
+
+<div class="cart-item">
+
+<div>
+
+<b>
+${esc(p.name)}
+</b>
+
+<br>
+
+₹${price(p)
+.toLocaleString("en-IN")}
+
+</div>
+
+<button
+class="remove"
+onclick="
+toggleWish(${id});
+openWishlist();
+">
+
+REMOVE
+
+</button>
+
+</div>
+
+`;
+
+}).join("")
+
+:
+
+`
+<p
+style="
+padding:30px;
+text-align:center;
+color:#777">
+
+Your wishlist is empty.
+
+</p>
+`;
+
+document
+.getElementById("wishModal")
+.classList.add("show");
+
+}
+
 
 /* =========================
 DETAILS
 ========================= */
 
-function openDetails(index){
+function details(id){
 
-refreshProducts();
+const p=
+products[id-1];
 
-selectedProduct=products[index];
+selected=p;
 
-if(!selectedProduct)return;
-
-const p=selectedProduct;
-const price=getFinalPrice(p);
-const stock=Number(p.stock||0);
-
-let sizeOptions=
-(p.sizes||"M,L,XL,XXL")
-.split(",")
-.map(s=>s.trim())
-.filter(Boolean);
-
-const sizeHTML=sizeOptions.map(size=>`
-<option value="${escapeHTML(size)}">
-Size ${escapeHTML(size)}
-</option>
-`).join("");
-
-document.getElementById("detailsContent")
+document
+.getElementById("detailBox")
 .innerHTML=`
 
-<div class="detail-layout">
+<div class="detail">
+
+<img
+src="${p.image}"
+alt="${esc(p.name)}">
 
 <div>
 
-<img
-class="detail-image"
-src="${escapeHTML(p.image||"")}"
-alt="${escapeHTML(p.name||"Product")}">
-
-</div>
-
-<div class="detail-info">
-
 <p>
-${escapeHTML(p.category||"")}
+${esc(p.category)}
 </p>
 
 <h2>
-${escapeHTML(p.name||"")}
+${esc(p.name)}
 </h2>
 
-<div class="detail-price">
-₹${price.toLocaleString("en-IN")}
+<div class="price">
+
+₹${price(p)
+.toLocaleString("en-IN")}
+
 </div>
 
-<div class="detail-description">
-${escapeHTML(
-p.description||
-"Premium quality fashion product."
-)}
+<div class="desc">
+
+${esc(p.desc)}
+
 </div>
-
-<p class="${
-stock<=0?"out-stock":"in-stock"
-}">
-
-${
-stock<=0
-?"Out of Stock"
-:
-stock<=3
-?"Only "+stock+" left"
-:"In Stock"
-}
-
-</p>
 
 <select id="detailSize">
-${sizeHTML}
+
+${
+p.sizes
+.split(",")
+.map(s=>
+`<option>${esc(s)}</option>`
+)
+.join("")
+}
+
 </select>
 
 <button
 class="add"
-onclick="addDetailToCart()"
-${stock<=0?"disabled":""}>
-${stock<=0?"OUT OF STOCK":"ADD TO CART"}
+onclick="addDetail()">
+
+ADD TO CART
+
 </button>
 
 <button
 class="buy"
-onclick="buyDetailNow()"
-${stock<=0?"disabled":""}>
-${stock<=0?"OUT OF STOCK":"BUY NOW"}
+onclick="buyDetail()">
+
+BUY NOW
+
 </button>
 
 </div>
+
 </div>
+
 `;
 
 document
-.getElementById("detailsModal")
+.getElementById("detailModal")
 .classList.add("show");
 
 }
+
 
 /* =========================
 DETAIL ADD
 ========================= */
 
-function addDetailToCart(){
-
-if(!selectedProduct)return;
+function addDetail(){
 
 const size=
-document.getElementById("detailSize").value;
+document.getElementById(
+"detailSize"
+).value;
 
-const price=
-getFinalPrice(selectedProduct);
-
-const existing=cart.find(item=>
-Number(item.id)===
-Number(selectedProduct.id) &&
-item.size===size
+const existing=
+cart.find(
+x=>
+x.id===selected.id &&
+x.size===size
 );
 
 if(existing){
 
-existing.quantity++;
+existing.qty++;
 
 }else{
 
 cart.push({
 
-id:selectedProduct.id,
-name:selectedProduct.name,
-price:price,
+id:selected.id,
+name:selected.name,
+price:price(selected),
 size:size,
-quantity:1
+qty:1
 
 });
 
@@ -1703,243 +1864,65 @@ quantity:1
 saveCart();
 
 alert(
-selectedProduct.name+
+selected.name+
 " added to cart."
 );
 
 }
 
+
 /* =========================
 DETAIL BUY
 ========================= */
 
-function buyDetailNow(){
-
-if(!selectedProduct)return;
+function buyDetail(){
 
 const size=
-document.getElementById("detailSize").value;
-
-const price=
-getFinalPrice(selectedProduct);
+document.getElementById(
+"detailSize"
+).value;
 
 cart=[{
 
-id:selectedProduct.id,
-name:selectedProduct.name,
-price:price,
+id:selected.id,
+name:selected.name,
+price:price(selected),
 size:size,
-quantity:1
+qty:1
 
 }];
 
 saveCart();
 
-closeModal("detailsModal");
+closeM("detailModal");
 
-openCheckout();
-
-}
-
-/* =========================
-BUY NOW
-========================= */
-
-function buyNow(index){
-
-refreshProducts();
-
-const product=products[index];
-
-if(!product)return;
-
-const stock=Number(product.stock||0);
-
-if(stock<=0){
-
-alert("This product is out of stock.");
-return;
+checkout();
 
 }
 
-const sizeElement=
-document.getElementById("size"+index);
-
-const size=sizeElement?
-sizeElement.value:
-"M";
-
-const price=getFinalPrice(product);
-
-cart=[{
-
-id:product.id,
-name:product.name,
-price:price,
-size:size,
-quantity:1
-
-}];
-
-saveCart();
-
-openCheckout();
-
-}
-
-/* =========================
-WISHLIST
-========================= */
-
-function toggleWishlist(index){
-
-refreshProducts();
-
-const product=products[index];
-
-if(!product)return;
-
-const id=product.id;
-
-const oldIndex=wishlist.findIndex(
-item=>
-String(item)===String(id) ||
-String(item)===String(product.name)
-);
-
-if(oldIndex>=0){
-
-wishlist.splice(oldIndex,1);
-
-}else{
-
-wishlist.push(id);
-
-}
-
-localStorage.setItem(
-"zyvoraWishlist",
-JSON.stringify(wishlist)
-);
-
-displayProducts();
-
-}
-
-/* =========================
-OPEN WISHLIST
-========================= */
-
-function openWishlist(){
-
-refreshProducts();
-
-const box=
-document.getElementById("wishlistItems");
-
-if(wishlist.length===0){
-
-box.innerHTML=`
-<p style="
-text-align:center;
-padding:30px;
-color:#777;">
-Your wishlist is empty.
-</p>`;
-
-}else{
-
-box.innerHTML="";
-
-wishlist.forEach((idOrName,index)=>{
-
-const product=products.find(
-p=>
-String(p.id)===String(idOrName) ||
-String(p.name)===String(idOrName)
-);
-
-if(product){
-
-box.innerHTML+=`
-
-<div class="cart-item">
-
-<div>
-
-<strong>
-${escapeHTML(product.name)}
-</strong>
-
-<br>
-
-₹${getFinalPrice(product)
-.toLocaleString("en-IN")}
-
-</div>
-
-<button
-class="remove"
-onclick="removeWishlist('${String(product.id)}')">
-REMOVE
-</button>
-
-</div>
-
-`;
-
-}
-
-});
-
-}
-
-document
-.getElementById("wishlistModal")
-.classList.add("show");
-
-}
-
-/* =========================
-REMOVE WISHLIST
-========================= */
-
-function removeWishlist(id){
-
-wishlist=wishlist.filter(
-item=>
-String(item)!==String(id)
-);
-
-localStorage.setItem(
-"zyvoraWishlist",
-JSON.stringify(wishlist)
-);
-
-displayProducts();
-
-openWishlist();
-
-}
 
 /* =========================
 CHECKOUT
 ========================= */
 
-function openCheckout(){
+function checkout(){
 
-if(cart.length===0){
+if(!cart.length){
 
-alert("Your cart is empty.");
+alert(
+"Your cart is empty."
+);
+
 return;
 
 }
 
-document.getElementById("checkoutTotal")
-.innerText=
-getTotal().toLocaleString("en-IN");
+document.getElementById(
+"checkoutTotal"
+).innerText=
+total().toLocaleString("en-IN");
 
-closeModal("cartModal");
+closeM("cartModal");
 
 document
 .getElementById("checkoutModal")
@@ -1947,43 +1930,33 @@ document
 
 }
 
-/* =========================
-ORDER ID
-========================= */
-
-function generateOrderID(){
-
-const time=
-Date.now()
-.toString()
-.slice(-8);
-
-const random=
-Math.floor(Math.random()*900+100);
-
-return "ZYV-"+time+"-"+random;
-
-}
 
 /* =========================
-CUSTOMER DATA
+CUSTOMER
 ========================= */
 
-function getCustomerData(){
+function customer(){
 
 const name=
-document.getElementById("customerName")
+document
+.getElementById("name")
 .value.trim();
 
 const phone=
-document.getElementById("customerPhone")
+document
+.getElementById("phone")
 .value.trim();
 
 const address=
-document.getElementById("customerAddress")
+document
+.getElementById("address")
 .value.trim();
 
-if(!name||!phone||!address){
+if(
+!name||
+!phone||
+!address
+){
 
 alert(
 "Please enter your name, mobile number and address."
@@ -1994,135 +1967,75 @@ return null;
 }
 
 return{
-name:name,
-phone:phone,
-address:address
+name,
+phone,
+address
 };
 
 }
 
+
 /* =========================
-UPI
+ORDER
 ========================= */
 
-function payWithUPI(){
+function order(){
 
-const customer=getCustomerData();
+const c=
+customer();
 
-if(!customer)return;
+if(!c)return;
 
-if(cart.length===0){
+const pay=
+document
+.querySelector(
+'input[name="pay"]:checked'
+)
+.value;
 
-alert("Your cart is empty.");
-return;
+const id=
+"ZYV-"+
+Date.now()
+.toString()
+.slice(-8);
 
-}
+last={
 
-const orderID=generateOrderID();
-const amount=getTotal().toFixed(2);
-
-lastOrder={
-
-id:orderID,
-customer:customer,
-cart:[...cart],
-total:amount,
-payment:"UPI"
+id:id,
+c:c,
+items:[...cart],
+total:total(),
+pay:pay
 
 };
 
-const upiLink=
-"upi://pay"+
-"?pa="+encodeURIComponent(UPI_ID)+
-"&pn="+encodeURIComponent(STORE_NAME)+
-"&am="+encodeURIComponent(amount)+
-"&cu=INR"+
-"&tn="+encodeURIComponent(
-"Zyvora "+orderID
-);
 
-window.location.href=upiLink;
+/* SAVE FOR ADMIN */
 
-}
-
-/* =========================
-WHATSAPP ORDER
-========================= */
-
-function sendWhatsAppOrder(){
-
-const customer=getCustomerData();
-
-if(!customer)return;
-
-if(cart.length===0){
-
-alert("Your cart is empty.");
-return;
-
-}
-
-const paymentElement=
-document.querySelector(
-'input[name="payment"]:checked'
-);
-
-const payment=
-paymentElement?
-paymentElement.value:
-"COD";
-
-const orderID=generateOrderID();
-
-lastOrder={
-
-id:orderID,
-customer:customer,
-cart:[...cart],
-total:getTotal(),
-payment:payment
-
-};
-
-saveOrderToAdmin();
-
-showConfirmation();
-
-}
-
-/* =========================
-SAVE ORDER
-========================= */
-
-function saveOrderToAdmin(){
-
-if(!lastOrder)return;
-
-let orders=JSON.parse(
-localStorage.getItem("zyvoraOrders")||"[]"
+let orders=
+JSON.parse(
+localStorage.getItem(
+"zyvoraOrders"
+)||"[]"
 );
 
 orders.push({
 
-id:lastOrder.id,
+id:id,
 
-customer:lastOrder.customer.name,
+customer:c.name,
 
-name:lastOrder.customer.name,
+phone:c.phone,
 
-phone:lastOrder.customer.phone,
+address:c.address,
 
-mobile:lastOrder.customer.phone,
+total:last.total,
 
-address:lastOrder.customer.address,
+payment:pay,
 
-total:Number(lastOrder.total),
+items:last.items,
 
 status:"New",
-
-payment:lastOrder.payment,
-
-items:lastOrder.cart,
 
 date:new Date().toISOString()
 
@@ -2133,137 +2046,142 @@ localStorage.setItem(
 JSON.stringify(orders)
 );
 
-}
 
-/* =========================
-CONFIRMATION
-========================= */
-
-function showConfirmation(){
-
-document.getElementById("orderId")
-.innerText=lastOrder.id;
-
-closeModal("checkoutModal");
-
-document
-.getElementById("confirmationModal")
-.classList.add("show");
-
-}
-
-/* =========================
-SEND WHATSAPP
-========================= */
-
-function sendLastOrderWhatsApp(){
-
-if(!lastOrder){
-
-alert("No order found.");
-return;
-
-}
+/* WHATSAPP */
 
 let message=
 "Hello Zyvora! I want to place an order.\n\n";
 
 message+=
 "Order ID: "+
-lastOrder.id+
+id+
 "\n";
 
 message+=
-"Customer Name: "+
-lastOrder.customer.name+
+"Customer: "+
+c.name+
 "\n";
 
 message+=
 "Mobile: "+
-lastOrder.customer.phone+
+c.phone+
 "\n";
 
 message+=
 "Address: "+
-lastOrder.customer.address+
+c.address+
 "\n\n";
 
 message+=
 "ORDER DETAILS:\n";
 
-lastOrder.cart.forEach(
-(item,index)=>{
+last.items.forEach(
+(x,i)=>{
 
 message+=
-(index+1)+
+(i+1)+
 ". "+
-item.name+
+x.name+
 " | Size: "+
-item.size+
+x.size+
 " | Qty: "+
-item.quantity+
+x.qty+
 " | ₹"+
-(item.price*item.quantity)+
+(x.price*x.qty)+
 "\n";
 
 });
 
 message+=
 "\nTotal: ₹"+
-lastOrder.total+
+last.total+
 "\n";
 
 message+=
-"Payment Method: "+
-lastOrder.payment+
-"\n";
+"Payment: "+
+pay;
 
-const url=
+
+window.open(
 "https://wa.me/"+
-WHATSAPP_NUMBER+
+WA+
 "?text="+
-encodeURIComponent(message);
+encodeURIComponent(message),
+"_blank"
+);
 
-window.open(url,"_blank");
+closeM(
+"checkoutModal"
+);
 
 }
+
 
 /* =========================
-MODAL
+PLACE ORDER
 ========================= */
 
-function closeModal(id){
+function placeOrder(){
 
-const modal=document.getElementById(id);
-
-if(modal){
-modal.classList.remove("show");
-}
+order();
 
 }
+
 
 /* =========================
-UPDATE IF ADMIN CHANGES
+UPI
 ========================= */
 
-window.addEventListener(
-"storage",
-function(event){
+function payUPI(){
 
-if(event.key==="zyvoraProducts"){
+const c=
+customer();
 
-displayProducts();
+if(!c)return;
+
+const amount=
+total().toFixed(2);
+
+const id=
+"ZYV-"+
+Date.now()
+.toString()
+.slice(-8);
+
+window.location.href=
+"upi://pay"+
+"?pa="+
+encodeURIComponent(UPI)+
+"&pn=Zyvora"+
+"&am="+
+amount+
+"&cu=INR"+
+"&tn="+
+encodeURIComponent(id);
 
 }
 
-});
+
+/* =========================
+CLOSE MODAL
+========================= */
+
+function closeM(id){
+
+document
+.getElementById(id)
+.classList.remove("show");
+
+}
+
 
 /* =========================
 START
 ========================= */
 
-displayProducts();
-updateCounts();
+render();
+
+counts();
 
 </script>
 
