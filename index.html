@@ -6,227 +6,392 @@
 <title>ZYVORA | Premium Fashion Store</title>
 
 <style>
+
+/* =========================
+RESET
+========================= */
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,sans-serif
+  font-family:Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  background:#f7f7f7;
-  color:#111
+  background:#f5f5f5;
+  color:#111;
 }
+
+/* =========================
+HEADER
+========================= */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  padding:13px 5%;
+  height:72px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #e8e8e8;
+  padding:0 5%;
   display:flex;
   align-items:center;
-  justify-content:space-between
+  justify-content:space-between;
 }
 
 .logo{
-  font-size:26px;
+  font-size:27px;
   font-weight:900;
-  letter-spacing:5px
+  letter-spacing:6px;
+}
+
+.logo span{
+  color:#777;
 }
 
 nav{
   display:flex;
-  gap:22px
+  gap:30px;
 }
 
 nav a{
   text-decoration:none;
   color:#111;
-  font-weight:bold
+  font-size:14px;
+  font-weight:bold;
+  transition:.25s;
+}
+
+nav a:hover{
+  color:#777;
 }
 
 .actions{
   display:flex;
-  gap:7px
+  gap:8px;
 }
 
 .actions button{
+  min-width:48px;
   background:#111;
   color:#fff;
   border:0;
-  border-radius:22px;
+  border-radius:25px;
   padding:10px 14px;
-  cursor:pointer
+  cursor:pointer;
+  transition:.25s;
 }
 
+.actions button:hover{
+  background:#333;
+  transform:translateY(-2px);
+}
+
+/* =========================
+HERO
+========================= */
+
 .hero{
-  min-height:530px;
+  min-height:650px;
   display:grid;
   place-items:center;
   text-align:center;
   color:#fff;
-  padding:30px;
+  padding:40px 20px;
   background:
-    linear-gradient(#000a,#000a),
-    linear-gradient(135deg,#111,#777)
+    linear-gradient(90deg,#000d,#0007),
+    linear-gradient(135deg,#050505,#555);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid #ffffff22;
+  border-radius:50%;
+  top:-220px;
+  right:-180px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border:1px solid #ffffff18;
+  border-radius:50%;
+  bottom:-170px;
+  left:-130px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
 }
 
 .hero small{
-  letter-spacing:5px
+  letter-spacing:7px;
+  font-size:12px;
+  color:#ccc;
 }
 
 .hero h1{
-  font-size:68px;
-  letter-spacing:12px;
-  margin:18px
+  font-size:78px;
+  letter-spacing:18px;
+  margin:22px 0;
+}
+
+.hero h2{
+  font-size:20px;
+  letter-spacing:4px;
+  font-weight:400;
+  margin-bottom:18px;
 }
 
 .hero p{
-  max-width:700px;
-  line-height:1.7;
-  color:#eee
+  max-width:650px;
+  margin:auto;
+  line-height:1.8;
+  color:#ddd;
 }
 
 .hero-btn{
   display:inline-block;
-  margin-top:25px;
+  margin-top:30px;
   background:#fff;
   color:#111;
   text-decoration:none;
-  font-weight:bold;
-  padding:14px 30px;
-  border-radius:22px
+  font-weight:900;
+  padding:15px 34px;
+  border-radius:30px;
+  transition:.3s;
 }
+
+.hero-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px #0007;
+}
+
+/* =========================
+TRUST BAR
+========================= */
+
+.trust{
+  background:#111;
+  color:#fff;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:20px 5%;
+  text-align:center;
+}
+
+.trust div{
+  border-right:1px solid #ffffff20;
+  padding:8px;
+}
+
+.trust div:last-child{
+  border:0;
+}
+
+.trust b{
+  display:block;
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.trust span{
+  color:#999;
+  font-size:11px;
+}
+
+/* =========================
+SEARCH
+========================= */
 
 .search-area{
   max-width:1250px;
   margin:auto;
-  padding:28px 5% 10px
+  padding:35px 5% 10px;
 }
 
 .search{
   width:100%;
-  padding:15px 20px;
+  padding:16px 22px;
   border:1px solid #ddd;
   border-radius:30px;
-  font-size:16px
+  font-size:15px;
+  outline:none;
+  transition:.25s;
 }
+
+.search:focus{
+  border-color:#111;
+  box-shadow:0 0 0 3px #1111;
+}
+
+/* =========================
+CATEGORIES
+========================= */
 
 .categories{
   display:flex;
   justify-content:center;
-  gap:8px;
+  gap:9px;
   flex-wrap:wrap;
-  padding:18px 5%
+  padding:18px 5%;
 }
 
 .category{
   background:#fff;
   border:1px solid #ddd;
-  border-radius:22px;
-  padding:10px 16px;
+  border-radius:25px;
+  padding:10px 18px;
   font-weight:bold;
-  cursor:pointer
+  cursor:pointer;
+  transition:.25s;
+}
+
+.category:hover{
+  border-color:#111;
 }
 
 .category.active{
   background:#111;
-  color:#fff
+  color:#fff;
+  border-color:#111;
 }
 
+/* =========================
+SECTION
+========================= */
+
 section{
-  padding:45px 5%
+  padding:50px 5%;
 }
 
 .section-title{
   text-align:center;
-  margin-bottom:28px
+  margin-bottom:35px;
 }
 
 .section-title h2{
-  font-size:38px
+  font-size:40px;
+  letter-spacing:-1px;
 }
 
 .section-title p{
   color:#777;
-  margin-top:7px
+  margin-top:8px;
 }
+
+/* =========================
+PRODUCT GRID
+========================= */
 
 .products{
   max-width:1250px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:16px
+  gap:18px;
 }
 
 .product{
   background:#fff;
-  border-radius:15px;
+  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 5px 18px #00000012;
-  position:relative
+  box-shadow:0 5px 20px #0000000c;
+  position:relative;
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px #00000018;
 }
 
 .product-img{
-  height:270px;
+  height:300px;
   background:#eee;
   cursor:pointer;
-  overflow:hidden
+  overflow:hidden;
+  position:relative;
 }
 
 .product-img img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:.3s
+  transition:.5s;
 }
 
-.product:hover img{
-  transform:scale(1.04)
+.product:hover .product-img img{
+  transform:scale(1.06);
+}
+
+.sale{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#111;
+  color:#fff;
+  padding:6px 9px;
+  border-radius:5px;
+  font-size:10px;
+  font-weight:bold;
+  z-index:2;
 }
 
 .wish{
   position:absolute;
-  right:9px;
-  top:9px;
+  right:10px;
+  top:10px;
   border:0;
   border-radius:50%;
   background:#fff;
-  width:38px;
-  height:38px;
+  width:40px;
+  height:40px;
   font-size:20px;
-  z-index:2;
-  cursor:pointer
+  z-index:3;
+  cursor:pointer;
+  box-shadow:0 4px 12px #0002;
 }
 
 .info{
-  padding:13px
+  padding:15px;
 }
 
 .info h3{
-  font-size:16px
+  font-size:16px;
+  margin-bottom:5px;
 }
 
 .info p{
   font-size:12px;
   color:#777;
-  margin-top:4px
 }
 
 .price{
   font-size:19px;
-  font-weight:800;
-  margin:9px 0
+  font-weight:900;
+  margin:10px 0;
 }
 
 .old{
   text-decoration:line-through;
   color:#999;
   font-size:13px;
-  margin-right:4px
+  margin-right:5px;
 }
 
 .disc{
@@ -234,32 +399,26 @@ section{
   background:#111;
   color:#fff;
   padding:3px 5px;
-  border-radius:4px
+  border-radius:4px;
 }
 
 .stock{
-  font-size:12px;
+  font-size:11px;
   font-weight:bold;
-  margin:6px 0
+  margin-top:8px;
 }
 
 .in{
-  color:#168a32
-}
-
-.low{
-  color:#c77800
-}
-
-.out{
-  color:#c00
+  color:#168a32;
 }
 
 .info select{
   width:100%;
-  padding:9px;
+  padding:10px;
   border:1px solid #ddd;
-  border-radius:8px
+  border-radius:8px;
+  background:#fff;
+  margin-top:4px;
 }
 
 .add,
@@ -268,55 +427,85 @@ section{
 .whatsapp,
 .upi{
   width:100%;
-  padding:11px;
+  padding:12px;
   border:0;
   border-radius:9px;
   color:#fff;
   font-weight:bold;
-  margin-top:6px;
-  cursor:pointer
+  margin-top:7px;
+  cursor:pointer;
+  transition:.25s;
 }
 
 .add,
 .checkout,
 .upi{
-  background:#111
+  background:#111;
 }
 
 .buy,
 .whatsapp{
-  background:#111
+  background:#f0c400;
+  color:#111;
 }
 
-.add:disabled,
-.buy:disabled{
-  background:#aaa
+.add:hover,
+.checkout:hover,
+.upi:hover{
+  background:#333;
 }
+
+.buy:hover,
+.whatsapp:hover{
+  background:#ffd900;
+  transform:translateY(-2px);
+}
+
+/* =========================
+ABOUT
+========================= */
 
 .about{
   background:#111;
   color:#fff;
-  text-align:center
+  text-align:center;
+}
+
+.about .section-title h2{
+  color:#fff;
 }
 
 .about p{
   max-width:760px;
   margin:auto;
-  color:#ccc;
-  line-height:1.8
+  color:#bbb;
+  line-height:1.9;
 }
 
+/* =========================
+FOOTER
+========================= */
+
 footer{
-  background:#000;
+  background:#050505;
   color:#fff;
   text-align:center;
-  padding:30px
+  padding:45px 20px;
+}
+
+footer h2{
+  letter-spacing:6px;
 }
 
 footer p{
-  color:#aaa;
-  margin-top:7px
+  color:#888;
+  margin-top:8px;
+  font-size:13px;
 }
+
+/* =========================
+MODALS
+========================= */
 
 .modal{
   display:none;
@@ -325,20 +514,21 @@ footer p{
   background:#000b;
   z-index:2000;
   padding:18px;
-  overflow:auto
+  overflow:auto;
 }
 
 .modal.show{
-  display:block
+  display:block;
 }
 
 .modal-box{
   background:#fff;
-  max-width:680px;
+  max-width:700px;
   margin:25px auto;
-  padding:24px;
+  padding:26px;
   border-radius:18px;
-  position:relative
+  position:relative;
+  box-shadow:0 20px 60px #0008;
 }
 
 .close{
@@ -352,132 +542,241 @@ footer p{
   width:36px;
   height:36px;
   font-size:20px;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .cart-item{
   display:flex;
   justify-content:space-between;
   gap:12px;
-  padding:13px 0;
-  border-bottom:1px solid #eee
+  padding:14px 0;
+  border-bottom:1px solid #eee;
+}
+
+.qty{
+  margin-top:8px;
 }
 
 .qty button{
-  width:28px;
-  height:28px;
+  width:30px;
+  height:30px;
   border:1px solid #ddd;
   background:#fff;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .remove{
   background:#e53935;
   color:#fff;
   border:0;
-  padding:7px;
+  padding:7px 9px;
   border-radius:6px;
-  cursor:pointer
+  cursor:pointer;
+  height:max-content;
 }
 
 .detail{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px
+  gap:22px;
 }
 
 .detail img{
   width:100%;
-  height:420px;
+  height:430px;
   object-fit:cover;
-  border-radius:12px
+  border-radius:12px;
 }
 
 .detail h2{
   font-size:30px;
-  margin:8px 0
+  margin:8px 0;
 }
 
 .desc{
   color:#666;
   line-height:1.7;
-  margin:15px 0
+  margin:15px 0;
 }
 
 .form input,
 .form textarea{
   width:100%;
-  padding:12px;
+  padding:13px;
   border:1px solid #ddd;
   border-radius:8px;
-  margin:5px 0
+  margin:5px 0;
+  outline:none;
+}
+
+.form input:focus,
+.form textarea:focus{
+  border-color:#111;
 }
 
 .total{
   font-size:23px;
   font-weight:bold;
-  margin:16px 0
+  margin:17px 0;
 }
+
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:900px){
 
 .products{
-  grid-template-columns:repeat(3,1fr)
+  grid-template-columns:repeat(3,1fr);
+}
+
+.trust{
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.trust div:nth-child(2){
+  border:0;
 }
 
 }
 
 @media(max-width:650px){
 
+header{
+  height:64px;
+}
+
 nav{
-  display:none
+  display:none;
+}
+
+.logo{
+  font-size:22px;
+  letter-spacing:4px;
+}
+
+.actions button{
+  min-width:42px;
+  padding:9px 11px;
+}
+
+.hero{
+  min-height:560px;
 }
 
 .hero h1{
   font-size:43px;
-  letter-spacing:6px
+  letter-spacing:7px;
+}
+
+.hero h2{
+  font-size:15px;
+  letter-spacing:2px;
+}
+
+.hero p{
+  font-size:13px;
+}
+
+.trust{
+  grid-template-columns:repeat(2,1fr);
+  padding:15px 4%;
+}
+
+.trust div{
+  border:0;
 }
 
 .products{
   grid-template-columns:repeat(2,1fr);
-  gap:9px
+  gap:10px;
 }
 
 .product-img{
-  height:215px
+  height:220px;
 }
 
 .info{
-  padding:10px
+  padding:11px;
 }
 
 .info h3{
-  font-size:14px
+  font-size:14px;
 }
 
 .price{
-  font-size:16px
+  font-size:16px;
 }
 
 .add,
 .buy{
   font-size:11px;
-  padding:9px
-}
-
-.detail{
-  grid-template-columns:1fr
-}
-
-.detail img{
-  height:330px
+  padding:10px;
 }
 
 .section-title h2{
-  font-size:30px
+  font-size:30px;
+}
+
+.detail{
+  grid-template-columns:1fr;
+}
+
+.detail img{
+  height:330px;
+}
+
+.modal-box{
+  margin:10px auto;
+  padding:20px;
 }
 
 }
+
+/* =========================
+BOTTOM MOBILE BAR
+========================= */
+
+.mobile-bar{
+  display:none;
+}
+
+@media(max-width:650px){
+
+.mobile-bar{
+  display:flex;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:62px;
+  background:#fff;
+  border-top:1px solid #ddd;
+  z-index:1500;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.mobile-bar button{
+  border:0;
+  background:none;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.mobile-bar span{
+  display:block;
+  font-size:20px;
+  margin-bottom:2px;
+}
+
+body{
+  padding-bottom:62px;
+}
+
+}
+
 </style>
 </head>
 
@@ -486,13 +785,13 @@ nav{
 <header>
 
 <div class="logo">
-ZYVORA
+ZYVORA<span>.</span>
 </div>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#shop">Shop</a>
-<a href="#about">About</a>
+<a href="#home">HOME</a>
+<a href="#shop">SHOP</a>
+<a href="#about">ABOUT</a>
 </nav>
 
 <div class="actions">
@@ -509,165 +808,164 @@ ZYVORA
 
 </header>
 
+
 <section class="hero" id="home">
 
-<div>
+<div class="hero-content">
 
-<small>NEW COLLECTION</small>
+<small>PREMIUM COLLECTION • 2026</small>
 
 <h1>ZYVORA</h1>
 
+<h2>PREMIUM FASHION. TIMELESS STYLE.</h2>
+
 <p>
-Modern fashion designed for your everyday style.
-Discover clothing, shoes and accessories for a confident look.
+Discover modern clothing, footwear and accessories
+designed for people who believe style is a statement.
 </p>
 
 <a class="hero-btn" href="#shop">
-SHOP NOW
+SHOP COLLECTION
 </a>
 
 </div>
 
 </section>
 
+
+<div class="trust">
+
+<div>
+<b>🔒 SECURE CHECKOUT</b>
+<span>Protected shopping</span>
+</div>
+
+<div>
+<b>🚚 FAST DELIVERY</b>
+<span>Quick order processing</span>
+</div>
+
+<div>
+<b>↩️ EASY RETURNS</b>
+<span>Simple return experience</span>
+</div>
+
+<div>
+<b>💎 PREMIUM QUALITY</b>
+<span>Selected products</span>
+</div>
+
+</div>
+
+
 <div class="search-area">
 
 <input
 id="search"
 class="search"
-placeholder="🔍 Search products..."
+placeholder="🔍 Search products, shoes, accessories..."
 oninput="render()">
 
 </div>
 
+
 <div class="categories">
 
-<button
-class="category active"
-onclick="filter('All',this)">
-All
+<button class="category active" onclick="filter('All',this)">
+ALL
 </button>
 
-<button
-class="category"
-onclick="filter('Men',this)">
-Men
+<button class="category" onclick="filter('Men',this)">
+MEN
 </button>
 
-<button
-class="category"
-onclick="filter('Women',this)">
-Women
+<button class="category" onclick="filter('Women',this)">
+WOMEN
 </button>
 
-<button
-class="category"
-onclick="filter('Shoes',this)">
-Shoes
+<button class="category" onclick="filter('Shoes',this)">
+SHOES
 </button>
 
-<button
-class="category"
-onclick="filter('Accessories',this)">
-Accessories
+<button class="category" onclick="filter('Accessories',this)">
+ACCESSORIES
 </button>
 
 </div>
+
 
 <section id="shop">
 
 <div class="section-title">
 
-<h2>
-Featured Collection
-</h2>
+<h2>Featured Collection</h2>
 
 <p>
-Clothing • Shoes • Accessories
+Curated pieces for a modern wardrobe.
 </p>
 
 </div>
 
-<div
-id="products"
-class="products">
-</div>
+<div id="products" class="products"></div>
 
 </section>
 
-<section
-id="about"
-class="about">
+
+<section id="about" class="about">
 
 <div class="section-title">
 
-<h2>
-About Zyvora
-</h2>
+<h2>About ZYVORA</h2>
 
-<p style="color:#aaa">
-Style • Simplicity • Confidence
+<p style="color:#999">
+STYLE • SIMPLICITY • CONFIDENCE
 </p>
 
 </div>
 
 <p>
-Zyvora is a modern fashion-store concept focused on
-clean design, contemporary style and an easy shopping
-experience across mobile and desktop devices.
+ZYVORA is a modern fashion-store concept focused on
+premium visual design, contemporary style and a smooth
+shopping experience across mobile and desktop devices.
 </p>
 
 </section>
 
+
 <footer>
 
-<h2>
-ZYVORA
-</h2>
+<h2>ZYVORA</h2>
 
-<p>
-Modern Fashion Store
-</p>
+<p>PREMIUM FASHION. TIMELESS STYLE.</p>
 
-<p>
-WhatsApp: +91 6283618166
-</p>
+<p>WhatsApp: +91 6283618166</p>
 
-<p>
-© 2026 Zyvora. All Rights Reserved.
-</p>
+<p>Created by SAJAN & GURPREET SINGH</p>
+
+<p>© 2026 ZYVORA. All Rights Reserved.</p>
 
 </footer>
 
 
 <!-- CART -->
 
-<div
-id="cartModal"
-class="modal">
+<div id="cartModal" class="modal">
 
 <div class="modal-box">
 
-<button
-class="close"
-onclick="closeM('cartModal')">
+<button class="close" onclick="closeM('cartModal')">
 ×
 </button>
 
-<h2>
-🛒 Your Cart
-</h2>
+<h2>🛒 Your Cart</h2>
 
-<div id="cartItems">
-</div>
+<div id="cartItems"></div>
 
 <div class="total">
 Total: ₹<span id="cartTotal">0</span>
 </div>
 
-<button
-class="checkout"
-onclick="checkout()">
+<button class="checkout" onclick="checkout()">
 PROCEED TO CHECKOUT
 </button>
 
@@ -678,24 +976,17 @@ PROCEED TO CHECKOUT
 
 <!-- WISHLIST -->
 
-<div
-id="wishModal"
-class="modal">
+<div id="wishModal" class="modal">
 
 <div class="modal-box">
 
-<button
-class="close"
-onclick="closeM('wishModal')">
+<button class="close" onclick="closeM('wishModal')">
 ×
 </button>
 
-<h2>
-❤️ Wishlist
-</h2>
+<h2>❤️ Wishlist</h2>
 
-<div id="wishItems">
-</div>
+<div id="wishItems"></div>
 
 </div>
 
@@ -704,20 +995,15 @@ onclick="closeM('wishModal')">
 
 <!-- DETAILS -->
 
-<div
-id="detailModal"
-class="modal">
+<div id="detailModal" class="modal">
 
 <div class="modal-box">
 
-<button
-class="close"
-onclick="closeM('detailModal')">
+<button class="close" onclick="closeM('detailModal')">
 ×
 </button>
 
-<div id="detailBox">
-</div>
+<div id="detailBox"></div>
 
 </div>
 
@@ -726,85 +1012,86 @@ onclick="closeM('detailModal')">
 
 <!-- CHECKOUT -->
 
-<div
-id="checkoutModal"
-class="modal">
+<div id="checkoutModal" class="modal">
 
 <div class="modal-box">
 
-<button
-class="close"
-onclick="closeM('checkoutModal')">
+<button class="close" onclick="closeM('checkoutModal')">
 ×
 </button>
 
-<h2>
-🧾 Checkout
-</h2>
+<h2>🧾 Checkout</h2>
 
 <div class="form">
 
-<input
-id="name"
-placeholder="Full Name">
+<input id="name" placeholder="Full Name">
 
-<input
-id="phone"
-placeholder="Mobile Number">
+<input id="phone" placeholder="Mobile Number">
 
 <textarea
 id="address"
 rows="4"
-placeholder="Full Address">
-</textarea>
+placeholder="Full Address"></textarea>
 
 </div>
 
-<h3>
-Payment Method
-</h3>
+<h3>Payment Method</h3>
 
 <p>
 <label>
-<input
-type="radio"
-name="pay"
-value="COD"
-checked>
+<input type="radio" name="pay" value="COD" checked>
 Cash on Delivery
 </label>
 </p>
 
 <p>
 <label>
-<input
-type="radio"
-name="pay"
-value="UPI">
+<input type="radio" name="pay" value="UPI">
 UPI Payment
 </label>
 </p>
 
 <div class="total">
-
 Order Total:
 ₹<span id="checkoutTotal">0</span>
-
 </div>
 
-<button
-class="whatsapp"
-onclick="placeOrder()">
+<button class="whatsapp" onclick="placeOrder()">
 📱 ORDER ON WHATSAPP
 </button>
 
-<button
-class="upi"
-onclick="payUPI()">
+<button class="upi" onclick="payUPI()">
 💳 PAY WITH UPI
 </button>
 
 </div>
+
+</div>
+
+
+<!-- MOBILE BAR -->
+
+<div class="mobile-bar">
+
+<button onclick="location.href='#home'">
+<span>⌂</span>
+HOME
+</button>
+
+<button onclick="location.href='#shop'">
+<span>🛍️</span>
+SHOP
+</button>
+
+<button onclick="openWishlist()">
+<span>❤️</span>
+WISHLIST
+</button>
+
+<button onclick="openCart()">
+<span>🛒</span>
+CART
+</button>
 
 </div>
 
@@ -850,7 +1137,7 @@ q+
 
 
 /* =========================
-30 PRODUCTS
+PRODUCTS
 ========================= */
 
 const products=[
@@ -1159,7 +1446,7 @@ sizes:"5,6,7,8"
 
 
 /* =========================
-ADD DEFAULT DATA
+PREPARE PRODUCTS
 ========================= */
 
 products.forEach((p,i)=>{
@@ -1179,7 +1466,7 @@ p.name+
 
 
 /* =========================
-ESCAPE HTML
+ESCAPE
 ========================= */
 
 function esc(v){
@@ -1199,7 +1486,7 @@ return String(v??"")
 
 
 /* =========================
-FINAL PRICE
+PRICE
 ========================= */
 
 function price(p){
@@ -1259,6 +1546,8 @@ p.color.toLowerCase().includes(search)
 
 document.getElementById("products")
 .innerHTML=
+list.length
+?
 list.map(p=>{
 
 const liked=
@@ -1275,6 +1564,16 @@ p.sizes
 return `
 
 <div class="product">
+
+${
+p.discount
+?
+`<div class="sale">
+SALE -${p.discount}%
+</div>`
+:
+""
+}
 
 <button
 class="wish"
@@ -1308,7 +1607,7 @@ ${esc(p.color)}
 </p>
 
 <div class="stock in">
-In Stock
+✓ In Stock
 </div>
 
 <div class="price">
@@ -1367,7 +1666,23 @@ BUY NOW
 
 `;
 
-}).join("");
+}).join("")
+:
+`
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:60px;
+color:#777">
+
+<h3>No products found</h3>
+
+<p style="margin-top:8px">
+Try another search.
+</p>
+
+</div>
+`;
 
 counts();
 
@@ -1411,13 +1726,13 @@ counts();
 
 
 /* =========================
-ADD CART
+ADD
 ========================= */
 
 function add(id){
 
 const p=
-products[id-1];
+products.find(x=>x.id===id);
 
 const size=
 document.getElementById(
@@ -1459,13 +1774,13 @@ p.name+
 
 
 /* =========================
-BUY NOW
+BUY
 ========================= */
 
 function buy(id){
 
 const p=
-products[id-1];
+products.find(x=>x.id===id);
 
 const size=
 document.getElementById(
@@ -1497,8 +1812,7 @@ function total(){
 
 return cart.reduce(
 (a,x)=>
-a+
-x.price*x.qty,
+a+x.price*x.qty,
 0
 );
 
@@ -1506,15 +1820,13 @@ x.price*x.qty,
 
 
 /* =========================
-OPEN CART
+CART
 ========================= */
 
 function openCart(){
 
 const box=
-document.getElementById(
-"cartItems"
-);
+document.getElementById("cartItems");
 
 box.innerHTML=
 cart.length
@@ -1526,25 +1838,20 @@ cart.map((x,i)=>`
 
 <div>
 
-<b>
-${esc(x.name)}
-</b>
+<b>${esc(x.name)}</b>
 
 <br>
 
-Size:
-${esc(x.size)}
+Size: ${esc(x.size)}
 
 <br>
 
 ₹${x.price.toLocaleString("en-IN")}
-×
-${x.qty}
+× ${x.qty}
 
 <div class="qty">
 
-<button
-onclick="qty(${i},-1)">
+<button onclick="qty(${i},-1)">
 −
 </button>
 
@@ -1552,8 +1859,7 @@ onclick="qty(${i},-1)">
 ${x.qty}
 </span>
 
-<button
-onclick="qty(${i},1)">
+<button onclick="qty(${i},1)">
 +
 </button>
 
@@ -1563,7 +1869,7 @@ onclick="qty(${i},1)">
 
 <button
 class="remove"
-onclick="remove(${i})">
+onclick="removeItem(${i})">
 
 REMOVE
 
@@ -1576,8 +1882,7 @@ REMOVE
 :
 
 `
-<p
-style="
+<p style="
 padding:30px;
 text-align:center;
 color:#777">
@@ -1587,9 +1892,8 @@ Your cart is empty.
 </p>
 `;
 
-document.getElementById(
-"cartTotal"
-).innerText=
+document.getElementById("cartTotal")
+.innerText=
 total().toLocaleString("en-IN");
 
 document
@@ -1624,7 +1928,7 @@ openCart();
 REMOVE
 ========================= */
 
-function remove(i){
+function removeItem(i){
 
 cart.splice(i,1);
 
@@ -1671,9 +1975,7 @@ OPEN WISHLIST
 function openWishlist(){
 
 const box=
-document.getElementById(
-"wishItems"
-);
+document.getElementById("wishItems");
 
 box.innerHTML=
 wish.length
@@ -1682,7 +1984,7 @@ wish.length
 wish.map(id=>{
 
 const p=
-products[id-1];
+products.find(x=>x.id===id);
 
 return `
 
@@ -1721,8 +2023,7 @@ REMOVE
 :
 
 `
-<p
-style="
+<p style="
 padding:30px;
 text-align:center;
 color:#777">
@@ -1746,7 +2047,7 @@ DETAILS
 function details(id){
 
 const p=
-products[id-1];
+products.find(x=>x.id===id);
 
 selected=p;
 
@@ -1771,16 +2072,11 @@ ${esc(p.name)}
 </h2>
 
 <div class="price">
-
-₹${price(p)
-.toLocaleString("en-IN")}
-
+₹${price(p).toLocaleString("en-IN")}
 </div>
 
 <div class="desc">
-
 ${esc(p.desc)}
-
 </div>
 
 <select id="detailSize">
@@ -2009,9 +2305,6 @@ pay:pay
 
 };
 
-
-/* SAVE FOR ADMIN */
-
 let orders=
 JSON.parse(
 localStorage.getItem(
@@ -2022,21 +2315,13 @@ localStorage.getItem(
 orders.push({
 
 id:id,
-
 customer:c.name,
-
 phone:c.phone,
-
 address:c.address,
-
 total:last.total,
-
 payment:pay,
-
 items:last.items,
-
 status:"New",
-
 date:new Date().toISOString()
 
 });
@@ -2163,7 +2448,7 @@ encodeURIComponent(id);
 
 
 /* =========================
-CLOSE MODAL
+CLOSE
 ========================= */
 
 function closeM(id){
